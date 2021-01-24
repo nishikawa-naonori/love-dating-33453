@@ -1,24 +1,70 @@
-# README
+## -------------------------------------------------------------------
+## -------------------------------------------------------------------
+# テーブル設計                                                        --
+## -------------------------------------------------------------------
+## -------------------------------------------------------------------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## -------------------------------------------
+## users テーブル                              
+## -------------------------------------------
+| Column             | Type   | Options      |
+| --------           | ------ | -----------  |
+| nickname           | string | null: false  |
+| email              | string | unique: true |
+| encrypted_password | string | null: false  |
+| seibetu            | string | null: false  |
+| age                | string | null: false  |
+| work               | string | null: false  |
 
-* Ruby version
 
-* System dependencies
+### Association(アソシエーション)
 
-* Configuration
+- has_many :love
+- has_many :comment
+- has_many :tip
 
-* Database creation
+## -------------------------------------------
+## loves テーブル
+## -------------------------------------------
+| Column           | Type       | Options     |
+| ------           | ------     | ----------- |
+| user             | referrence | null: false, foreign_key: true |
+| category_id      | integer    | null: false |
+| title            | string     | null: false |
+| info1            | text       | null: false |
 
-* Database initialization
 
-* How to run the test suite
+### Association(アソシエーション)
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
 
-* Deployment instructions
+- has_many   :comment
 
-* ...
+## -------------------------------------------
+## comments テーブル
+## -------------------------------------------
+
+| Column     | Type       | Options                        |
+| ------     | ---------- | ------------------------------ |
+| user       | references | null: false, foreign_key: true |
+| love       | references | null: false, foreign_key: true |
+| info2      | text       | null: false |
+
+### Association(アソシエーション)
+
+- belongs_to :user
+- belongs_to :love
+
+## -------------------------------------------
+## tips テーブル
+## -------------------------------------------
+
+| Column     | Type       | Options                        |
+| ------     | ---------- | ------------------------------ |
+| user       | references | null: false, foreign_key: true |
+| love       | references | null: false, foreign_key: true |
+| money      | integer    | null: false                    |
+
+- belongs_to :user
+- belongs_to :love

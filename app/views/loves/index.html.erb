@@ -1,4 +1,23 @@
+<%#= render "shared/header" %>
 
-    <h2 class='service-title'>
-      人生を変えるフリマアプリ
-    </h2>
+  <body>
+    <header class="header">
+      <div class="header__bar row">
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+            <%= link_to "投稿する", "#",  class: "post" %>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "login" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
+          </div>
+        <% end %>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+    </footer>
+  </body>
+</html>

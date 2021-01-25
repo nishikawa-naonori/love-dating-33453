@@ -16,12 +16,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## 職業
       t.string :work,               null: false, default: ""
 
+      t.timestamps null: false
+
+      ## Rememberable
+      t.datetime :remember_created_at
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
-      ## Rememberable
-      t.datetime :remember_created_at
+
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
@@ -42,7 +46,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
+
     end
 
     add_index :users, :email,                unique: true

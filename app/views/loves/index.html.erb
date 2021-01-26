@@ -1,3 +1,91 @@
 <%= render "shared/header" %>
 
+<div class='main'>
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      恋の疑問を解決するラブライク
+    </h2>
+    <p class='service-explain'>
+      ラブライクは誰でも簡単に相談できる
+    </p>
+    <p class='service-explain'>
+      全ての人の恋愛が成就するアプリです
+    </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("anime.png", class:"apple-btn"), "#" %>
+    </div>
+  </div>
+</div>
+  <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
+
+
+  <%# FURIMAが選ばれる3つの理由部分 %>
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      ラブライクが選ばれる3つの理由
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "4220178_s.png", class:"list-pict" %>
+        <span class='reason-list-number'>1</span>
+        <h3 class='reason-list-text'>
+          些細なことでも気軽に相談できる
+        </h3>
+        <p class='reason-list-description'>
+          自分で溜め込まずみんなに話せる
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "4191062_l.png", class:"list-pict" %>
+        <span class='reason-list-number'>2</span>
+        <h3 class='reason-list-text'>
+          シンプルで使いやすい
+        </h3>
+        <p class='reason-list-description'>
+          めんどくさい規約はなく、検索も送金もスムーズ！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "4193334_m.png", class:"list-pict" %>
+        <span class='reason-list-number'>3</span>
+        <h3 class='reason-list-text'>
+          素晴らしい
+          <span class='reason-list-blue-text'>投稿でチップがもらえるかも</span>
+        </h3>
+        <p class='reason-list-description'>
+          ためになるアドバイスをしてトップアドバイザーになろー！
+        </p>
+      </li>
+    </ul>
+  </div>
+  <%# /FURIMAが選ばれる3つの理由部分 %>
+
+
+  <%# 画面中央の「会員数日本一位」帯部分 %>
+  <div class='ad-contents'>
+    <h2 class='ad-title'>
+      会員数日本一位
+    </h2>
+    <p class='ad-explain'>
+      ラブライクは、日本の新時代を先駆ける最高のアプリ。
+    </p>
+    <p class='ad-explain'>
+      登録者数・投稿数・回答数も業界トップを目指します！
+    </p>
+    <p class='ad-explain'>
+      長年の疑問もここで解決できるかもしれません。
+    </p>
+  
+  </div>
+  <%# /画面中央の「会員数日本一位」帯部分 %>
+
+
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>投稿記事一覧</h2>
+  </div>
+  <%# /商品一覧 %>
+
+
 <%= render "shared/second-footer"%>

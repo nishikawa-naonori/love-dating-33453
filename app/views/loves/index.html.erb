@@ -12,9 +12,6 @@
     <p class='service-explain'>
       全ての人の恋愛が成就するアプリです
     </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("anime.png", class:"apple-btn"), "#" %>
-    </div>
   </div>
 </div>
   <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
@@ -64,9 +61,7 @@
 
   <%# 画面中央の「会員数日本一位」帯部分 %>
   <div class='ad-contents'>
-    <h2 class='ad-title'>
-      会員数日本一位
-    </h2>
+
     <p class='ad-explain'>
       ラブライクは、日本の新時代を先駆ける最高のアプリ。
     </p>
@@ -83,9 +78,61 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>投稿記事一覧</h2>
-  </div>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+  <ul class='item-lists'>
   <%# /商品一覧 %>
 
+  <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    <% if @loves[0] != nil %>  
+      <% @loves.each do |love| %>
+        <li class='list'>
+          <%= link_to lofe_path(love.id) do %>
+            <div class='item-img-content'>
+              <%= image_tag love.image, class: "item-img" %>
+            </div>
+            <div class='item-info'>
+              <%# タイトルを表示-------------------------%>
+              <h3 class='item-name'>
+                <%= love.title %>        
+              </h3>
+             <%# タイトルを表示--------------------------%>
+              <div class='item-price'>
+                名前：<%= love.user.nickname %>
+              </div>
+                <div class='item-price'>
+                性別：<%= love.user.seibetu.name %>
+              </div>
+             <div class='item-price'>
+                職業：<%= love.user.work.name %>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+  <%# -------------------------------------------------------------------------- %>
+    <% else %>
+      <%= link_to '#' do %>
+        <%= image_tag "anime.png", class: "item-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            記事を投稿してね！
+          </h3>
+          <div class='item-price'>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+<%= link_to(new_lofe_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
+  <%= image_tag '603344.png' , size: '585x50' ,class: "purchase-btn-icon" %>
+<% end %>
 
 <%= render "shared/second-footer"%>
+

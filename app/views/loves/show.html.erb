@@ -1,0 +1,32 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @love.title %>
+    </h2>
+
+    <div class="box0">
+        <%= link_to '#' do %>
+        投稿者：<%= @love.user.nickname %>
+              <% end %>
+    </div>
+    <div class="box1">
+        <p><%= @love.info1 %></p>
+    </div>
+        <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+ </div>
+  <div class="container">
+
+      <%= form_with(model: [@love, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントを投稿する", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+
+    </div>
+
+
+
+<%= render "shared/second-footer"%>

@@ -10,11 +10,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## パスワード
       t.string :encrypted_password, null: false, default: ""
       ## 性別
-      t.string :seibetu,            null: false, default: ""
+      t.integer :seibetu_id,        null: false
+      ## 職業
+      t.integer :work_id,           null: false
       ## 年齢
       t.string :age,                null: false, default: ""
-      ## 職業
-      t.string :work,               null: false, default: ""
 
       t.timestamps null: false
 

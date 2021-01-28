@@ -1,6 +1,6 @@
-class CreateLoves < ActiveRecord::Migration[6.0]
+class CreateRomances < ActiveRecord::Migration[6.0]
   def change
-    create_table :loves do |t|
+    create_table :romances do |t|
       ## タイトル
       t.string :title,              null: false, default: ""
       ## 悩みの説明

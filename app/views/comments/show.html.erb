@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+
+
+    <%# 未購入 && ログイン中 %>
+    <% if @comment.purchase == nil && user_signed_in? %>  
+    <%# 出品者とログインユーザーが同じ %>
+      <% if current_user == @comment.user %>  
+        <p class='or-text'>or</p>
+        <%= link_to '削除', comment_path(@comment.id), method: :delete, class:'item-destroy' %>
+      <% else %>
+        <%= link_to '購入画面に進む', item_purchases_path(@item.id), class:"item-red-btn"%>
+      <% end %>
+    <% end %>  
+
+<%= render "shared/footer" %>

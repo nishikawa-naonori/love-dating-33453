@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">悩みを投稿</h2>
-    <%= form_with(model: @love, local: true) do |f| %>
+    <%= form_with(model: @romance, local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -29,7 +29,7 @@
         タイトル
         <span class="indispensable">(必須 40文字まで)</span>
       </div>
-      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"彼女のLINEがそっけないです。", maxlength:"40" %>
+      <%= f.text_area :title, class:"items-text0", id:"item-name", placeholder:"彼女のLINEがそっけないです。", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           悩みの説明
@@ -41,18 +41,17 @@
     </div>
 
 
-
-
-
-
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+     <div>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
     </div>
     <%# /下部ボタン %>
   </div>
   <% end %>
 
-
 </div>
+
+<%= render "shared/second-footer"%>

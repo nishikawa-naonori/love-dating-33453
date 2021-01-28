@@ -4,7 +4,7 @@ extend ActiveHash::Associations::ActiveRecordExtensions
          :recoverable, :rememberable, :validatable
   belongs_to :seibetu
   belongs_to :work
-  has_many :loves
+  has_many :romances
   has_many :comments, dependent: :destroy
 
   validates :nickname, presence: true

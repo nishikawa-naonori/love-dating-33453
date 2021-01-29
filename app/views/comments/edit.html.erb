@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<%#= form_with(model: [@romance, @comment], local: true) do |f| %>
+<%#= form_with model: @romance, local: true do |f| %>
+
+<%= form_with model: [@romance, @comment], url: romance_comment_path, local: true do |f| %>
+  
+     <%= f.text_area :text, class:"items-text", id:"item-info",rows:"13" ,maxlength:"1000" %>
+    <div class="sell-btn-contents">
+      <%= f.submit "編集する" ,class:"sell-btn" %>
+     <div>
+  
+  <% end %>
+<%= render "shared/second-footer"%>
+
+ <%#= form_with(model: [@prototype, @comment], local: true) do |f| %>

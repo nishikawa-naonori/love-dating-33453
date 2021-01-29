@@ -52,12 +52,12 @@
 
 .item-red-btn {
   text-align: center;
-  background-color: #ea352d;
+  background: linear-gradient(#05FBFF, #1E00FF);
   font-size: 24px;
   font-weight: bold;
   color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
+  margin: 8px 0px;
+  padding: 1vh 5vw;
 }
 
 .or-text {
@@ -69,8 +69,8 @@
   text-align: center;
   font-size: 24px;
   color: black;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
+  margin: 9px 0px;
+  padding: 1vh 4vw;
 }
 
 .item-explain-box {

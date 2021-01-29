@@ -1,0 +1,56 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('名称未設定2.png' , size: '185x50'), "/" %>
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">投稿を編集しましょう</h2>
+    <%= form_with(model: @romance, local: true) do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像を編集してね
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">(必須 40文字まで)</span>
+      </div>
+      <%= f.text_area :title, class:"items-text0", id:"item-name", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          悩みの説明
+          <span class="indispensable">（必須 1,000文字まで）</span>
+        </div>
+        <%= f.text_area :info1, class:"items-text", id:"item-info",rows:"13" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "編集する" ,class:"sell-btn" %>
+     <div>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+</div>
+
+<%= render "shared/second-footer"%>

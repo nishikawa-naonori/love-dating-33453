@@ -92,24 +92,21 @@
               <div class='item-img-content'>
                 <%= image_tag romance.image, class: "item-img" %>
 
-              <div class='item-info'>
-
-                <h3 class='item-name'>
-                  <%= romance.title %>        
-                </h3>
-
-                <div class='item-price'>
-                  名前：<%= romance.user.nickname %>
-                </div>
-                  <div class='item-price'>
-                  性別：<%= romance.user.seibetu.name %>
-                </div>
-                <div class='item-price'>
-                  職業：<%= romance.user.work.name %>
-                </div>
-
+                  <div class='item-info'>
+                      <h3 class='item-name'>
+                        <%= romance.title %>        
+                      </h3>
+                      <div class='item-price'>
+                        名前：<%= romance.user.nickname %>
+                      </div>
+                        <div class='item-price'>
+                        性別：<%= romance.user.seibetu.name %>
+                      </div>
+                      <div class='item-price'>
+                        職業：<%= romance.user.work.name %>
+                      </div>
+                  </div>
               </div>
-           </div>
             <% end %>
           </li>
         <% end %>

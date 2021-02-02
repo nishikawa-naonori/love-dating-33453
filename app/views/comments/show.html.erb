@@ -1,15 +1,16 @@
 <%= render "shared/header" %>
 
 
+<div class="box1">
+  <%= @comment.text %>
+</div>
 
+                  <% if current_user == @comment.user %>  
+                    <%= link_to '編集する', edit_romance_comment_path(@comment) %> 
+                  <% end %>
+         <%#= link_to '編集する', edit_romance_comment_path(@comment) %> 
 
-
+      
+          <%= link_to 'コメントを削除', romance_comment_path(@comment.id), method: :delete, class:'item-destroy' , data: { confirm: '本当に削除しますか？' } %>
   
 
-        <div class="box1">
-         <%= @comment.text %>
-        </div>
-
-         <%= link_to '編集する', edit_romance_comment_path(@comment) %> 
-
-    <%= link_to 'コメントを削除', romance_comment_path(@comment.id), method: :delete, class:'item-destroy' %>

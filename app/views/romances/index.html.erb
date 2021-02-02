@@ -21,7 +21,7 @@
   <%# FURIMAが選ばれる3つの理由部分 %>
   <div class='select-reason-contents'>
     <h2 class='title'>
-      ラブライクが選ばれる3つの理由
+      みんな大好き！！ラブライクとは！？
     </h2>
     <ul class='reason-lists'>
       <li class='list'>
@@ -31,7 +31,7 @@
           些細なことでも気軽に相談できる
         </h3>
         <p class='reason-list-description'>
-          自分で溜め込まずみんなに話せる
+          自分で溜め込まないでみんなに話そう！
         </p>
       </li>
       <li class='list'>
@@ -41,18 +41,17 @@
           シンプルで使いやすい
         </h3>
         <p class='reason-list-description'>
-          めんどくさい規約はなく、検索も送金もスムーズ！
+          めんどくさい設定ははなく、検索もスムーズ！
         </p>
       </li>
       <li class='list'>
         <%= image_tag "4193334_m.png", class:"list-pict" %>
         <span class='reason-list-number'>3</span>
         <h3 class='reason-list-text'>
-          素晴らしい
-          <span class='reason-list-blue-text'>投稿でチップがもらえるかも</span>
+          自分のアドバイスで誰かが幸せになれる
         </h3>
         <p class='reason-list-description'>
-          ためになるアドバイスをしてトップアドバイザーになろー！
+          素晴らしい回答でトップアドバイザーになろー！
         </p>
       </li>
     </ul>
@@ -80,7 +79,7 @@
   <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>さっそくアドバイスしてあげよう</h2>
-    <%= link_to '新しい恋の相談', "#", class: "subtitle" %>
+    <%= link_to '新しい恋の相談', "#", class: "mybox" %>
   <ul class='item-lists'>
   <%# /商品一覧 %>
 
@@ -130,7 +129,7 @@
   </div>
 
 <%= link_to(new_romance_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>投稿する</span>
+  <span class='purchase-btn-text'>相談する</span>
   <%= image_tag '603344.png' , size: '585x50' ,class: "purchase-btn-icon" %>
 <% end %>
 

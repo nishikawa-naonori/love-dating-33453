@@ -1,10 +1,52 @@
 <%# 検索結果の画面 %>
+<%= render "shared/header" %>
+    <%# binding.pry %>
+ <div class='main'>
 
-<%= form_with(url: search_romances_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-<div class="contents row">
-  <%= tweet_lists(@tweets) %>
+
+
+    <%# 商品一覧 %>
+  <div class='item-contents'>
+      <% if @romances[0] != nil %> 
+        <h2 class='title'>あなたの気になる恋の相談はこれかな？</h2>
+      <% else %>
+        <h2 class='title'>その相談はまだないかも</h2>
+        <%= link_to 'トップページに戻る', "/", class:"furima-icon1"%>
+      <% end %>
+
+      <%= link_to '検索した恋の相談', "#", class: "mybox" %>
+  <ul class='item-lists'>
+  <%# /商品一覧 %>
+
+
+  <%# binding.pry %>
+
+    <% if @romances[0] != nil %>  
+        <% @romances.each do |romance| %>
+          <li class='list'>
+            <%= link_to romance_path(romance.id) do %>
+              <div class='item-img-content'>
+                <%= image_tag romance.image, class: "item-img" %>
+
+                  <div class='item-info'>
+                      <h3 class='item-name'>
+                        <%= romance.title %>        
+                      </h3>
+                      <div class='item-price'>
+                        名前：<%= romance.user.nickname %>
+                      </div>
+                        <div class='item-price'>
+                        性別：<%= romance.user.seibetu.name %>
+                      </div>
+                      <div class='item-price'>
+                        職業：<%= romance.user.work.name %>
+                      </div>
+                  </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+      
+      <% end %>
 </div>
-

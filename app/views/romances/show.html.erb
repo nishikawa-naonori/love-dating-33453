@@ -19,32 +19,42 @@
     </div>
     <%# ログインユーザーか？ %>
     <% if user_signed_in? %>  
-       <%# 出品者とログインユーザーが同じ %>
-       <%# binding.pry %>
+       <%# 投稿者とログインユーザーが同じ %>
+
       <% if current_user == @romance.user %>  
           <%= link_to '編集する', edit_romance_path(@romance.id), method: :get, class: "item-red-btn" %>
-          <%= link_to '記事を削除', romance_path(@romance.id), method: :delete, class:'item-destroy' %>
+          <%= link_to '記事を削除', romance_path(@romance.id), method: :delete, class:'item-destroy' , data: { confirm: '本当に削除しますか？' } %>
+      
+        <% if @comments[0] != nil %>  
+
           <div class="container">
             <%= form_with(model: [@romance, @comment], local: true) do |form| %>
              <%# エラーメッセージ------------------------------------------------------------------------ %>
               <%= render 'shared/error_messages', model: form.object %>
              <%# エラーメッセージ------------------------------------------------------------------------ %>
+             <%# binding.pry %>
+
                   <%= form.text_area :text, class:"box2", placeholder: "例）〇〇さん、アドバイスありがとう。何度もそのような話し合いはしているんですが。。。
 俺が悪かった直すと言って最後に機嫌取りをされての繰り返しで…冷めなんですかね…" %>
-               <div style="text-align: center">
-                <%= form.submit "送信" %>
-              </div>
-            <% end %>
+                    <div style="text-align: center">
+                      <%= form.submit "アドバイザーに返信" ,class:"a111-btn" %>
+                    </div>
+                  <% end %>
           </div>
+         <% end %>
       <% else %>
   
 
         <div class="box15">
+        <%# binding.pry %>
           <%= form_with(model: [@romance, @comment], local: true) do |form| %>
             <%= render 'shared/error_messages', model: form.object %>
-            <%= form.text_area :text, class:"box2", placeholder: "アドバイスを投稿する" %>
+            <%= form.text_area :text, class:"box2", placeholder: "例）「慣れ」と「飽き」がきているのかも。
+付き合いが長いと段々と好きとか甘い言葉を言うのはなんだか照れ臭くなってしまいますよね。
+安定した付き合いに慣れを感じて頑張って好かれていようとしなくなって扱いが雑になっていったり。
+もしかしたら、みんなの前での明るい彼は頑張ってつくっていてあなたの前のそれが素の状態なのかも。" %>
             <div class="parent">
-               <%= form.submit "送信" %>
+               <%= form.submit "アドバイスを送信" ,class:"a111-btn" %>
             </div>
           <% end %>
         </div>
@@ -67,12 +77,14 @@
                  <% end %>
 
                   <p><%= comment.text %> </p>
-                  
                   <% if current_user == comment.user %>  
-
                     <%= link_to '編集する', romance_comment_path(@romance,comment) %> 
-                  
                   <% end %>
+
+                  <% if current_user == @romance.user %> 
+                     <%= link_to '削除する', romance_comment_path(@romance,comment) %>
+                  <% end %>
+
               </div>
             <% end %>
 
@@ -87,13 +99,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <%= render "shared/second-footer"%>
+
+   <%# <div class="form-group"> %>
+      <%# <div class='parent'> %>
+        <%# <%= f.submit "ログイン" ,class:"login-red-btn" %>
+      <%# </div> %>
+    <%# </div> %>
+    
+  <%# </div> %>

@@ -6,4 +6,6 @@ class Romance < ApplicationRecord
 
 
   validates :image, presence: true
+
+
 end

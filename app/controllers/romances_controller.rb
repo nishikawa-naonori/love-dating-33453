@@ -1,5 +1,5 @@
 class RomancesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
 
 
@@ -49,7 +49,12 @@ class RomancesController < ApplicationController
   end
 
   def search
-    @romances = SearchTweetsService.search(params[:keyword])
+
+    # aaa = @romances.length
+    # puts @romances.length
+    @romances = SearchRomancesService.search(params[:keyword])
+         #binding.pry
+        #  @search = "aaa"
   end
 
   private

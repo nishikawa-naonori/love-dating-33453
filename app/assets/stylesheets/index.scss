@@ -53,7 +53,7 @@ a {
   padding: 5vh 15vw;
 }
 
-.select-reason-contents>.title {
+.select-reason-contents>.title1 {
   text-align: center;
   font-size: 3.5vh;
   font-weight: bold;
@@ -61,7 +61,8 @@ a {
   position: relative;
 }
 
-.select-reason-contents>.title::after {
+
+.select-reason-contents>.title1::after {
   content: '';
   width: 70px;
   height: 4px;
@@ -72,10 +73,50 @@ a {
   transform: translateX(-50%);
 }
 
+.select-reason-contents>.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.5vh;
+  margin-bottom: 5vh;
+	background-color: #fcf0f1; /* 背景色 */
+	color: #701722; /* 文字色 */
+	padding: 10px; /* 余白 */
+	position: relative;
+}
+
+.select-reason-contents>.title::after {
+	background: repeating-linear-gradient(-45deg, #f0b8bf, #f0b8bf 5px, #fcf0f1 0, #fcf0f1 10px); /* ストライプ */
+	content: '';
+	height: 5px; /* ストライプの高さ */
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .reason-lists {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  
 }
 
 .reason-lists>.list {
@@ -231,7 +272,7 @@ a {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #3ccace;
+  color: #ce3c87;
   font-weight: bold;
 }
 
@@ -310,3 +351,74 @@ a {
 
 
 
+.mybox{
+	background-color: #F6D4D8;  /* 背景色 */
+	border-radius: 5px;
+	margin: 20px 5px; /* 外側の余白 上下・左右 */
+	padding: 30px 200px 20px 200px; /* 内側の余白 上・右・下・左 */
+	position: relative;
+	z-index: 0;
+}
+.mybox:before{
+	border: 1px solid #fff; /* 白い実線 */
+	border-radius: 5px;
+	content: '';
+	display: block;
+	margin: 4px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+}
+.mybox:after{
+	background-color: rgba(249,223,213,0.9);  /* マステ背景色 */
+	background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0); /* 水玉の色 */
+	background-position: 0 0, 8px 8px;  /* 水玉の距離 */
+	background-size: 15px 15px; /* 水玉の大きさ */
+	border-left: 2px dotted rgba(0,0,0,0.1);
+	border-right: 2px dotted rgba(0,0,0,0.1);
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	content: '見に来てね';
+	display: block;
+	padding: 5px 20px;  
+	text-align: center;
+	position: absolute;
+	top: -10px;
+	left: 20px;
+	transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+}
+
+.select-reason-contents>.title1 {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+
+
+
+
+.title1 {
+  position: relative;/*相対位置*/
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  color: #7b6459;/*文字色*/
+}
+
+.title1:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1b0";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #ff938b; /*アイコン色*/
+}

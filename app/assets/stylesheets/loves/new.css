@@ -203,20 +203,31 @@
 }
 
 .sell-btn {
-  background: #160c0b;
-  border: 1px solid #ea352d;
+  background: linear-gradient(135deg, #ffd900, #ff9300);
+  height: 60px;
+  width: 190px;
+  border-radius: 20px;
   color: #fff;
-  width: 100%;
-  height: 50px;
-  font-size: 14px;
-  margin-bottom: 4vh;
+  border: 0;
+  font-size: 18px;
+  text-align:center; 
+  margin-bottom: 5vh;
 }
+
+/* background: linear-gradient(135deg, #ffd900, #ff9300);
+height: 60px;
+width: 190px;
+border-radius: 20px;
+color: #fff;
+border: 0;
+font-size: 18px;
+text-align:center; */
 
 .back-btn {
   background: #aaa;
-  border: 1px solid #aaa;
+  border-radius: 20px;
   color: #fff;
-  padding: 15px 13%;
+  padding: 15px 11%;
   text-decoration: none;
 }
 

@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_052202) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "likes_count"
     t.index ["user_id"], name: "index_romances_on_user_id"
   end
 

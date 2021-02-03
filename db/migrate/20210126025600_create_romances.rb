@@ -9,6 +9,8 @@ class CreateRomances < ActiveRecord::Migration[6.0]
       t.references :user, foreign_key: true
       ## 投稿時間
       t.timestamps
+      ## 
+      t.integer :likes_count
     end
   end
 end

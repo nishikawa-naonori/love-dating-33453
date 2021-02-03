@@ -17,6 +17,21 @@
     <div class="box1">
         <%= @romance.info1 %>
     </div>
+   <% if user_signed_in? %>
+      <h3>応援してるよ！！件数: <%= @romance.likes.count %></h3>
+
+        <% if current_user != @romance.user %>  
+
+          <% if current_user.already_liked?(@romance) %>
+            <%= button_to '応援してるよを取り消す', romance_like_path(@romance), method: :delete , class: "item-red-btn", data: { confirm: '本当に取り消しますか？' } %>
+          <% else %>
+            <%= button_to '応援してるよ', romance_likes_path(@romance) %>
+          <%  end %>
+
+      <%  end %>
+      
+   <%  end %>
+
     <%# ログインユーザーか？ %>
     <% if user_signed_in? %>  
        <%# 投稿者とログインユーザーが同じ %>
@@ -68,24 +83,40 @@
     <div class="comments">
       <% if @comments %>
             <% @comments.each do |comment| %>
-              <div class="box1">
+            
+                  <div class="box1">
 
-                <% if comment.user == @romance.user %>  
-                    投稿者本人：<%= comment.user.nickname %>  <%#= link_to romance_comment_path(comment.id) do %>
-                <% else %>
-                    アドバイザー：<%= comment.user.nickname %>
-                 <% end %>
+                    <% if comment.user == @romance.user %>  
+                        投稿者本人：<%= comment.user.nickname %>  <%#= link_to romance_comment_path(comment.id) do %>
+                    <% else %>
+                        アドバイザー：<%= comment.user.nickname %>
+                    <% end %>
 
-                  <p><%= comment.text %> </p>
-                  <% if current_user == comment.user %>  
-                    <%= link_to '編集する', romance_comment_path(@romance,comment) %> 
-                  <% end %>
+                      <p><%= comment.text %> </p>
+                      <% if current_user == comment.user %>  
+                        <%= link_to '編集する', romance_comment_path(@romance,comment) %> 
+                      <% end %>
 
-                  <% if current_user == @romance.user %> 
-                     <%= link_to '削除する', romance_comment_path(@romance,comment) %>
-                  <% end %>
+                      <% if current_user == @romance.user %> 
+                        <%= link_to '削除する', romance_comment_path(@romance,comment) %>
+                      <% end %>
+
+                          <%#  binding.pry %>
+
+                      <% if current_user == @romance.user %> 
+                        <div  class="comment" data-id=<%= comment.id %> data-check=<%= comment.checked %>>
+                          <div class="btn-gradient-3d">アドバイス読んだよ </div>
+                        </div>
+                      <% end %>
+
+                      <% if current_user != @romance.user %> 
+                        <% if comment.checked %> 
+                          <div> 投稿者：既読済み </div>
+                        <% end %>
+                      <% end %>
 
               </div>
+
             <% end %>
 
         <%# <%= link_to '削除', romance_comment_path(comment.id), method: :delete, class:'item-destroy' %> 

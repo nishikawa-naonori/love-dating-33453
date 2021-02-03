@@ -24,6 +24,7 @@ class RomancesController < ApplicationController
     @romance = Romance.find(params[:id])
     @comment = Comment.new
     @comments = @romance.comments.includes(:user).order('created_at DESC')
+    @like = Like.new
   end
 
   def destroy
@@ -49,13 +50,25 @@ class RomancesController < ApplicationController
   end
 
   def search
-
-    # aaa = @romances.length
-    # puts @romances.length
     @romances = SearchRomancesService.search(params[:keyword])
-         #binding.pry
-        #  @search = "aaa"
   end
+
+  def checked
+
+    comment = Comment.find(params[:id])
+
+    # commentテーブルのカラム  値があるか？
+    
+    if comment.checked 
+      comment.update(checked: false)
+    else
+      comment.update(checked: true)
+    end
+
+    item = Comment.find(params[:id])
+    render json: { comment: item }
+  end
+
 
   private
 

@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.integer :user_id, foreign_key: true
       t.integer :romance_id, foreign_key: true
       t.text :text
+      t.boolean :checked
       t.timestamps
     end
   end

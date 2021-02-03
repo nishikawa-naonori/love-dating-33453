@@ -17,9 +17,9 @@
     <div class="box1">
         <%= @romance.info1 %>
     </div>
+    
    <% if user_signed_in? %>
       <h3>応援してるよ！！件数: <%= @romance.likes.count %></h3>
-
         <% if current_user != @romance.user %>  
 
           <% if current_user.already_liked?(@romance) %>
@@ -29,7 +29,6 @@
           <%  end %>
 
       <%  end %>
-      
    <%  end %>
 
     <%# ログインユーザーか？ %>

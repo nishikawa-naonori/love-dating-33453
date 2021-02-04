@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def create
     @like = current_user.likes.create(romance_id: params[:romance_id])
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path)    #いいね、した時に戻る
   end
 
   def destroy
@@ -9,6 +9,9 @@ class LikesController < ApplicationController
     @like.destroy
     redirect_back(fallback_location: root_path)
   end
+
+
+#sssssssssssssssssssssssssssssssss
 
 
   # def create

@@ -1,6 +1,5 @@
 function check() {
   const comments = document.querySelectorAll(".comment");  //クラス名がcommentのHTML要素を撮ってきてる
-  comments.forEach(function (comment) { 
 
     if (comment.getAttribute("data-load") != null) {
       return null;
@@ -22,11 +21,6 @@ function check() {
 
       XHR.onload = () => {
 
-        // if (XHR.status != 200) {
-        //   alert(`Error ${XHR.status}: ${XHR.statusText}`);
-        //   return null;          
-        // }
-
         const item = XHR.response.comment;
 
         console.log(item); 
@@ -43,7 +37,6 @@ function check() {
 
 
     });
-  });
 }
 
 

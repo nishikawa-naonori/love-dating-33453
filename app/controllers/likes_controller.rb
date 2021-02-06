@@ -3,14 +3,26 @@ class LikesController < ApplicationController
   # binding.pry
   def create
     #binding.pry
-    Like.create(user_id: current_user.id, romance_id: params[:id])
-    redirect_back(fallback_location: root_path)
+      if Like.create(user_id: current_user.id, romance_id: params[:id])
+          respond_to do |format|
+            format.js
+          end
+    else
+      redirect_back(fallback_location: root_path)
+    end
+
   end
 
   def destroy
     #binding.pry
-    Like.find_by(user_id: current_user.id, romance_id: params[:id]).destroy
-    redirect_back(fallback_location: root_path)
+      if Like.find_by(user_id: current_user.id, romance_id: params[:id]).destroy
+          respond_to do |format|
+            format.js
+          end
+
+      else
+        redirect_back(fallback_location: root_path)
+      end
   end
 
   private

@@ -1,13 +1,5 @@
+<%# alert('いいねが押せている！'); %>
 
-
-alert('いいねが押せている！'); 
-
-console.log("いいねを押す"); 
-
-console.log(<%= @romance.id %>); 
-
-
-
-
+console.log("いいねをつける"); 
 
 document.getElementById('romance_<%= @romance.id %>').innerHTML = '<%= j(render @romance) %>'

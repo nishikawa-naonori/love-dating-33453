@@ -1,6 +1,8 @@
 
 
+alert('reate.js_いいねが押せている！'); 
 
+console.log("いいねを押す"); 
 
 
 

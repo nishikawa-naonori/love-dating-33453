@@ -9,8 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("../checked")
-require("../create")
-require("../destroy")
+// require("../create")
+// require("../destroy")
 
 
 

@@ -1,4 +1,14 @@
-console.log("check")
 
 
-$("#like-buttond").html("<%= j(render partial: 'like', locals: { romances: @romances, likes: @likes }) %>");
+alert('いいねを解除できている!');
+
+console.log("いいねを外す"); 
+
+console.log(<%= @romance.id %>); 
+
+
+
+
+
+
+document.getElementById('romance_<%= @romance.id %>').innerHTML = '<%= j(render @romance) %>'

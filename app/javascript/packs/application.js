@@ -7,10 +7,12 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
 require("../checked")
-require('../articles')
 require("../create")
 require("../destroy")
+
+
 
 
 

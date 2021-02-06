@@ -1,9 +1,13 @@
-console.log("8888888888")
+
+
+alert('いいねが押せている！'); 
+
+console.log("いいねを押す"); 
+
+console.log(<%= @romance.id %>); 
 
 
 
-alert('いいねが押せている！');
-$("#like-buttonc").html("<%= j(render partial: 'likes/create', locals: { romances: @romances, likes: @likes, like: @like}) %>");
 
-alert('いいねが押せている！');
-console.log("check55555555555")
+
+document.getElementById('romance_<%= @romance.id %>').innerHTML = '<%= j(render @romance) %>'

@@ -1,10 +1,16 @@
 class RomancesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-
+  before_action :set_romance, only: %i[ show edit update destroy ]
 
 
   def index
     @romances = Romance.order('created_at DESC')
+  end
+
+  def show
+    
+    @comment = Comment.new
+    @comments = @romance.comments.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -13,44 +19,58 @@ class RomancesController < ApplicationController
 
   def create
     @romance = Romance.new(romance_params)
-    if @romance.save
-      redirect_to root_path
-    else
-      render :new
+
+    # --------------------------------------------------------------
+
+    # 以下の1行を追記
+    @romance.user_id = current_user.id
+
+    respond_to do |format|
+      if @romance.save
+        format.html { redirect_to @romance, notice: "Romance was successfully created." }
+        format.json { render :show, status: :created, location: @romance }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @romance.errors, status: :unprocessable_entity }
+      end
     end
+    # --------------------------------------------------------------
+
   end
 
-  def show
-    @romance = Romance.find(params[:id])
-    @comment = Comment.new
-    @comments = @romance.comments.includes(:user).order('created_at DESC')
-    #@like = Like.new
-    # @like = Like.find(params[:id])
-   
-    @like = Like.find_by(romance_id: @romance.id, user_id: current_user.id)
-  end
+
 
   def destroy
-    @romance = Romance.find(params[:id])
+
+
     @romance.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to romances_url, notice: "Romance was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
 
   def edit
-    @romance = Romance.find(params[:id])
   end
 
   def update
-    @romance = Romance.find(params[:id])
-
-    if @romance.update(romance_params_update)
-      #binding.pry
-      redirect_to romance_path(@romance.id)
-    else
-      render :edit
+    respond_to do |format|
+      if @romances.update(romances_params)
+        format.html { redirect_to @romances, notice: "Post was successfully updated." }
+        format.json { render :show, status: :ok, location: @romances }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @romances.errors, status: :unprocessable_entity }
+      end
     end
   end
+
+
+
+
+
+
 
   def search
     @romances = SearchRomancesService.search(params[:keyword])
@@ -79,9 +99,13 @@ class RomancesController < ApplicationController
     params.require(:romance).permit(:image, :title, :info1).merge(user_id: current_user.id)
   end
 
+  def set_romance
+    @romance = Romance.find(params[:id])
+  end
+
+
   def romance_params_update
     params.require(:romance).permit(:image, :title, :info1)
   end
-
 
 end

@@ -9,13 +9,23 @@ class User < ApplicationRecord
   
     validates :nickname, presence: true
   
-    has_many :likes, dependent: :destroy
+   # has_many :likes, dependent: :destroy
+    has_many :likes
+    
     has_many :romances, dependent: :destroy
 
     # has_many :liked_romances, through: :likes, source: :romance
   
-    def already_liked?(romance)
-     self.likes.exists?(romance_id: romance.id) 
+   # def already_liked?(romance)
+    # self.likes.exists?(romance_id: romance.id) 
+  #  end
+
+    def liked_by?(romance_id)
+      likes.where(romance_id: romance_id).exists?
     end
+
+  #  def liked_by?(post_id)
+   #   likes.where(post_id: post_id).exists?
+  #  end
   end
   

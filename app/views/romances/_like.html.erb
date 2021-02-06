@@ -1,7 +1,49 @@
-<% if current_user.already_liked?(romance) %>
-<%= link_to 'いいねを外す', romance_like_path(romance) , method: :delete %>
+<% if user_signed_in? %>
+    <% if @romance.like_user(current_user.id) %>
+    
+        <%#= button_to romance_like_path(@romance.id, @like.id), method: :delete, id: "like-buttond", remote: true do %>
+         <%= link_to romance_like_path(@romance.id, @like.id), method: :delete, id: "like-buttond", remote: true do %>
+          <%#= image_tag("icon_red_heart.svg") %>
+          <div><%= @romance.likes_count %></div>
+           <span> 
+            <%= @romance.likes_count %>
+           </span>
+        <% end %>
+
+    <% else %>
+
+        <%= button_to romance_likes_path(@romance), id: "like-buttonc", remote: true do %>
+          <%#= image_tag("icon_heart.svg") %>
+          <span>
+            <%= @romance.likes_count %>
+          </span>
+        <% end %>
+
+    <% end %>
+
 <% else %>
-  <%= link_to 'いいね', romance_likes_path(romance) , method: :post %>
+
+  <%#= image_tag("icon_heart.svg") %>
+    <span>
+      <%= @romance.likes_count %>
+    </span>
+    
 <% end %>
 
-<%= romance.likes_count %>
+
+
+
+
+
+
+
+
+
+
+<%# if current_user.already_liked?(romance) %>
+<%#= link_to 'いいねを外す', romance_like_path(romance) , method: :delete %>
+<%# else %>
+  <%#= link_to 'いいね', romance_likes_path(romance) , method: :post %>
+<%# end %>
+
+<%#= romance.likes_count %>

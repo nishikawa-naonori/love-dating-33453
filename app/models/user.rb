@@ -15,7 +15,7 @@ class User < ApplicationRecord
     # has_many :liked_romances, through: :likes, source: :romance
   
     def already_liked?(romance)
-      self.likes.exists?(romance_id: romance.id)
+     self.likes.exists?(romance_id: romance.id) 
     end
   end
   

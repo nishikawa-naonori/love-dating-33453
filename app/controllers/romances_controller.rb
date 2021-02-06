@@ -24,7 +24,10 @@ class RomancesController < ApplicationController
     @romance = Romance.find(params[:id])
     @comment = Comment.new
     @comments = @romance.comments.includes(:user).order('created_at DESC')
-    @like = Like.new
+    #@like = Like.new
+    # @like = Like.find(params[:id])
+   
+    @like = Like.find_by(romance_id: @romance.id, user_id: current_user.id)
   end
 
   def destroy

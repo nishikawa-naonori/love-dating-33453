@@ -104,6 +104,7 @@
                       <div class='item-price'>
                         職業：<%= romance.user.work.name %>
                       </div>
+                      読者：閲覧数 <%= romance.likes.count %>
                   </div>
               </div>
             <% end %>
@@ -132,24 +133,6 @@
   <span class='purchase-btn-text'>相談する</span>
   <%= image_tag '603344.png' , size: '585x50' ,class: "purchase-btn-icon" %>
 <% end %>
-
-
-
-
-<table>
-
-  <tbody>
-    <% @romances.each do |romance| %>
-      <tr>
-        <td><%= romance.title %></td>
-
-        <td> いいね <%= romance.likes.count %> </td>
-
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
 
 
 <%= render "shared/second-footer"%>

@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-<%#= render "romances/like" %>
+
 
 <%# 商品の概要 %>
 <div class="item-show">
@@ -18,7 +18,18 @@
         <%= @romance.info1 %>
     </div>
     
+   <%# <% if user_signed_in? %> 
+      <%# <h3>応援してるよ！！件数: <%= @romance.likes.count</h3> %> 
+        <%# if current_user != @romance.user %>  
 
+          <%# if current_user.already_liked?(@romance) %>
+            <%#= button_to '応援してるよを取り消す', romance_like_path(@romance), method: :delete , class: "item-red-btn", data: { confirm: '本当に取り消しますか？' } %>
+          <%# else %>
+            <%#= button_to '応援してるよ', romance_likes_path(@romance) %>
+          <%#  end %>
+
+      <%#  end %>
+   <%#  end %>
 
     <%# ログインユーザーか？ %>
     <% if user_signed_in? %>  
@@ -116,7 +127,6 @@
       <% end %>
     </div>
 
-
 <table>
 
   <tbody>
@@ -130,10 +140,3 @@
 
 <%= render "shared/second-footer"%>
 
-   <%# <div class="form-group"> %>
-      <%# <div class='parent'> %>
-        <%# <%= f.submit "ログイン" ,class:"login-red-btn" %>
-      <%# </div> %>
-    <%# </div> %>
-    
-  <%# </div> %>

@@ -1,20 +1,28 @@
 
-
-
-
  <% if user_signed_in? %>  
   <%# 「liked_by?(post.id)」は、ユーザーが「いいね」を押しているかどうかを判別するためのメソッド %>
     <%# binding.pry %>
+        <%# <div>  読者観閲数<%= romance.likes.count </div> %> 
 
+    <% if current_user.liked_by?(romance.id) %>     
 
-    <% if current_user.liked_by?(romance.id) %>      
-      <td>
-          読者観閲数<%= romance.likes.count %>
+      <td>読者観閲数<%= romance.likes.count %></td>
+          
       
-      <%= link_to 'いいね外ずす', romance_destroy_like_path(romance), method: :DELETE, remote: true %> <%= romance.likes.count %></td>
-      <%# binding.pry %>
+         
+         <div>  
+        <%= link_to '読了を外す', romance_destroy_like_path(romance), method: :DELETE, remote: true %> 
+             </div>
+
+    
+   
     <% else %>
-      <td><%= link_to 'いいね付ける', romance_create_like_path(romance), method: :POST, remote: true %> <%= romance.likes.count %></td>
+      <td>読者観閲数<%= romance.likes.count %></td>
+          
+         <div>  
+      <%= link_to 'あなたの悩み読んだよ', romance_create_like_path(romance), method: :POST, remote: true %> 
+
+      </div>
       <%# binding.pry %>
     <% end %>
  <% end %>

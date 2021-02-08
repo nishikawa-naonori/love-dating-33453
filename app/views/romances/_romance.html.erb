@@ -1,7 +1,3 @@
-
-
-
-
  <% if user_signed_in? %>  
   <%# 「liked_by?(post.id)」は、ユーザーが「いいね」を押しているかどうかを判別するためのメソッド %>
     <%# binding.pry %>
@@ -21,6 +17,11 @@
       <%= link_to '読了伝える付ける', romance_create_like_path(romance), method: :POST, remote: true %> <%= romance.likes.count %></td>
       <%# binding.pry %>
     <% end %>
+
+  <% else %>
+
+    <td> 読者観閲数<%= romance.likes.count %> </td>
+          
  <% end %>
 
 

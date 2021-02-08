@@ -9,8 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("../checked")
-
-import '@fortawesome/fontawesome-free/js/all';
 // require("../create")
 // require("../destroy")
 

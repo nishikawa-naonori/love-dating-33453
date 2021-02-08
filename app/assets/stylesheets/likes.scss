@@ -1,24 +1,41 @@
-.btn-square-soft {
-  display: inline-block;
-  position: relative;
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+
+// likes.scss
+
+.like-link {
   text-decoration: none;
-  color: #f9a9ae;
-  width: 120px;
-  height: 50px;
-  line-height: 50px;
-  border-radius: 5px;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  background: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
 }
 
-.btn-square-soft:active {
-  /*押したとき*/
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);/*沈むように*/
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-  background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+.like-link:hover {
+  background-color: #fff!important;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #808080;
+}
+ 
+.unlike-btn {
+  font-size: 15px;
+  color: #e54747;
+}
+
+
+.like-link1 {
+  text-decoration: none;
+}
+
+.like-link1:hover {
+  background-color: #fff!important;
+}
+
+.like1-btn {
+  font-size: 15px;
+  color: #808080;
 }

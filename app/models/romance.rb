@@ -7,7 +7,7 @@ class Romance < ApplicationRecord
   has_one_attached :image
 
   #has_many :likes, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
 
   validates :image, presence: true

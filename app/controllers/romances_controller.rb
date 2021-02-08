@@ -41,8 +41,7 @@ class RomancesController < ApplicationController
 
 
   def destroy
-
-
+    
     @romance.destroy
     respond_to do |format|
       format.html { redirect_to romances_url, notice: "Romance was successfully destroyed." }
@@ -67,13 +66,23 @@ class RomancesController < ApplicationController
   end
 
 
-
-
-
-
-
   def search
-    @romances = SearchRomancesService.search(params[:keyword])
+    #@romances = SearchRomancesService.search(params[:keyword])
+
+    # キーワード分割
+    keywords = params[:keyword].split(/[[:blank:]]+/).select(&:present?)
+    #binding.pry
+    # 空のモデルオブジェクト作成（何も入っていない空配列のようなもの）
+    @romances = Romance.none
+    #binding.pry
+
+    # 検索ワードの数だけor検索を行う
+    keywords.each do |keyword|
+      #binding.pry
+      #keyword = keyword.tr('〇一二三四五六七八九', '0123456789').gsub(/(\d+)?十(\d+)?/) { ($1 || 1).to_i * 10 + $2.to_i }
+      @romances = @romances.or(Romance.where("title LIKE ?", "%#{keyword}%"))
+    end
+
   end
 
   def checked

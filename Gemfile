@@ -65,3 +65,5 @@ gem 'pry-rails'
 
 gem 'font-awesome-sass'
 
+gem 'pry-byebug'
+

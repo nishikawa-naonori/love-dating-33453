@@ -18,19 +18,6 @@
         <%= @romance.info1 %>
     </div>
     
-   <%# <% if user_signed_in? %> 
-      <%# <h3>応援してるよ！！件数: <%= @romance.likes.count</h3> %> 
-        <%# if current_user != @romance.user %>  
-
-          <%# if current_user.already_liked?(@romance) %>
-            <%#= button_to '応援してるよを取り消す', romance_like_path(@romance), method: :delete , class: "item-red-btn", data: { confirm: '本当に取り消しますか？' } %>
-          <%# else %>
-            <%#= button_to '応援してるよ', romance_likes_path(@romance) %>
-          <%#  end %>
-
-      <%#  end %>
-   <%#  end %>
-
     <%# ログインユーザーか？ %>
     <% if user_signed_in? %>  
        <%# 投稿者とログインユーザーが同じ %>
@@ -127,16 +114,18 @@
       <% end %>
     </div>
 
-<table>
+      <% if current_user == @romance.user %> 
+           <td> 読者:閲覧数<%= @romance.likes.count %> </td>
 
-  <tbody>
-      <tr id="romance_<%= @romance.id %>">
-        <%= render 'romance', romance: @romance %>
-      </tr>
-  </tbody>
+      <% else %>
 
-</table>
-
-
+        <table>
+          <tbody>
+              <tr id="romance_<%= @romance.id %>">
+                <%= render 'romance', romance: @romance %>
+              </tr>
+          </tbody>
+        </table>
+      <% end %>
 <%= render "shared/second-footer"%>
 

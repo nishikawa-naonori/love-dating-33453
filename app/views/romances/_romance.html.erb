@@ -3,27 +3,30 @@
     <%# binding.pry %>
 
 
-    <% if current_user.liked_by?(romance.id) %>      
-      <td>
-          読者観閲数<%= romance.likes.count %>
-      
-      <%= link_to '読了伝える外ずす', romance_destroy_like_path(romance), method: :DELETE, remote: true %> <%= romance.likes.count %></td>
-      <%# binding.pry %>
-    <% else %>
-      <td>
-          読者観閲数<%= romance.likes.count %>
-      
-      
-      <%= link_to '読了伝える付ける', romance_create_like_path(romance), method: :POST, remote: true %> <%= romance.likes.count %></td>
-      <%# binding.pry %>
-    <% end %>
+      <% if current_user.liked_by?(romance.id) %>     
+          <td>
+            観閲済マークをはずす
+            <%= link_to romance_destroy_like_path(romance), class: "like-link", data: { confirm: '本当に取り消しますか？' }, method: :DELETE, remote: true do %>
+              <i class="fa fa-heart unlike-btn"></i>
+            <% end %>
+            <%= romance.likes.count %>
+          </td>
+      <% else %>
+          <td>
+              観閲済マークを付ける
+              <%= link_to romance_create_like_path(romance), class: "like-link", method: :POST, remote: true do %>
+                <i class="fa fa-heart like-btn"></i>
+              <% end %>
+            <%= romance.likes.count %>
+          </td>
+      <% end %>
 
-  <% else %>
+<% else %>
 
-    <td> 読者観閲数<%= romance.likes.count %> </td>
+    <td> 読者:閲覧数<%= romance.likes.count %> </td>
           
  <% end %>
 
 
 
-
+ <%#= button_to '応援してるよを取り消す', romance_like_path(@romance), method: :delete , class: "item-red-btn", data: { confirm: '本当に取り消しますか？' } %>

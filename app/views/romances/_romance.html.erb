@@ -11,10 +11,14 @@
       <td>
           読者観閲数<%= romance.likes.count %>
       
-      <%= link_to 'いいね外ずす', romance_destroy_like_path(romance), method: :DELETE, remote: true %> <%= romance.likes.count %></td>
+      <%= link_to '読了伝える外ずす', romance_destroy_like_path(romance), method: :DELETE, remote: true %> <%= romance.likes.count %></td>
       <%# binding.pry %>
     <% else %>
-      <td><%= link_to 'いいね付ける', romance_create_like_path(romance), method: :POST, remote: true %> <%= romance.likes.count %></td>
+      <td>
+          読者観閲数<%= romance.likes.count %>
+      
+      
+      <%= link_to '読了伝える付ける', romance_create_like_path(romance), method: :POST, remote: true %> <%= romance.likes.count %></td>
       <%# binding.pry %>
     <% end %>
  <% end %>

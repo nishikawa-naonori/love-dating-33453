@@ -5,17 +5,24 @@
 
     <% if current_user.liked_by?(romance.id) %>      
       <td>
-          読者観閲数<%= romance.likes.count %>
-      
-      <%= link_to '読了伝える外ずす', romance_destroy_like_path(romance), method: :DELETE, remote: true %> <%= romance.likes.count %></td>
+      <%= link_to  romance_destroy_like_path(romance), class: "like-link", method: :DELETE, remote: true do %> 
+       <i class="fa fa-heart unlike-btn"></i>
+      <% end %>
+      <%= romance.likes.count %>
+      </td>
+
+
       <%# binding.pry %>
     <% else %>
       <td>
-          読者観閲数<%= romance.likes.count %>
-      
-      
-      <%= link_to '読了伝える付ける', romance_create_like_path(romance), method: :POST, remote: true %> <%= romance.likes.count %></td>
-      <%# binding.pry %>
+        <%= link_to romance_create_like_path(romance), class: "like-link",  method: :POST, remote: true do %> 
+        <i class="fa fa-heart like-btn"></i>
+        <% end %>
+        <%= romance.likes.count %> </td>
+      </td>
+         
+
+
     <% end %>
 
   <% else %>

@@ -6,6 +6,8 @@ if (document.URL.match( /sign_up/ )) {
 
     const nickName = document.getElementById("nickname");
     const eMail = document.getElementById("email");
+    const passWord = document.getElementById("password");
+    const passWordConfirmation = document.getElementById("password-confirmation");
 //--------------------------------------------------------------
     nickName.addEventListener("blur", e => { 
       const nickNameError = document.getElementById("nickname-error")
@@ -15,7 +17,6 @@ if (document.URL.match( /sign_up/ )) {
       nickNameError.removeAttribute("hidden")
 
       } else {
-        console.log("いいいいいいいいいいいい"); 
         nickNameError.setAttribute("hidden", true)
       }
     })
@@ -46,6 +47,25 @@ if (document.URL.match( /sign_up/ )) {
         }
       })
 //--------------------------------------------------------------
+      passWord.addEventListener("blur", e => { 
+        const passWordError = document.getElementById("password-error")
+        const passWordValidate = /^(?=.*[a-z])(?=.*[0-9])[0-9a-z]{6,}$/;
+        if (passWordValidate.test(passWord.value)){
+          passWordError.setAttribute("hidden", true)
+        } else {
+          passWordError.removeAttribute("hidden")
+        }
+      })
+
+//--------------------------------------------------------------
+      passWordConfirmation.addEventListener("blur", e => { 
+        const passWordConfirmationError = document.getElementById("password-confirmation-error")
+        if (passWord.value == passWordConfirmation.value){
+          passWordConfirmationError.setAttribute("hidden", true)
+        } else {
+          passWordConfirmationError.removeAttribute("hidden")
+        }
+      })
 
     })
   };
@@ -53,7 +73,3 @@ if (document.URL.match( /sign_up/ )) {
 
 
  
-//  登録済みのメール
-
-//  nickName.value != " "
-//|| !nickName.value.trim()

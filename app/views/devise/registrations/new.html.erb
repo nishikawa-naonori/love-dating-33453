@@ -1,4 +1,19 @@
-<%# ヘッダー -----------------------------------------------------------------------------------%>
+<%# ヘッダー -----------------------------------------------------------------------------------%>]
+
+<script>
+function rel() {
+  if (window.name != "any") {
+    //alert("リロードします");
+    location.reload();
+    window.name = "any";
+  } else {
+    window.name = "";
+  }
+}
+rel()
+</script>
+
+
 
 <%= render "shared/second-header"%> 
 
@@ -17,7 +32,9 @@
         <label class="form-text">ニックネーム</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 恋愛太郎", maxlength:"40" %>
+      
+      <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 恋愛太郎", maxlength:"40" , autofocus: true %>
+      <div id="nickname-error", class="red", hidden>※ニックネームの入力が必要です</div>
     </div>
     <%# メールアドレスの入力----------------------------------------------------------------------- %>
     <div class="form-group">
@@ -25,8 +42,19 @@
         <label class="form-text">メールアドレス</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
+      <div id="email-error", class="red", hidden>※◯◯@◯◯の形での入力が必要です</div>
+      <div id="email-error-uniq", class="red", hidden>使われてるメールアドレス</div>
     </div>
+
+
+
+
+
+
+
+
     <%# パスワードの入力----------------------------------------------------------------------- %>
     <div class="form-group">
       <div class='form-text-wrap'>

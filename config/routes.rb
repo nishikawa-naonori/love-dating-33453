@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   end
 
+  get 'users', to: 'users#check'
+
 end
 
 

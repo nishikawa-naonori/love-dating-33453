@@ -127,5 +127,27 @@
           </tbody>
         </table>
       <% end %>
+
+
+      <div class="links">
+        <a href="#" class="change-item-btn">
+          ＜ 前の記事
+        </a>
+        <a href="#" class="change-item-btn">
+          後ろの記事 ＞
+        </a>
+      </div>
+
+
+<% if @romance.previous.present? %>
+<%= link_to "次のページ", romance_path(@romance.previous), class: "change-item-btn"%>
+<% end %>
+
+<% if @romance.next.present? %>
+<%= link_to "前のページ",romance_path(@romance.next), class: "change-item-btn" %>
+<% end %>
+
+
+
 <%= render "shared/second-footer"%>
 

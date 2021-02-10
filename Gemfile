@@ -67,3 +67,5 @@ gem 'font-awesome-sass'
 
 gem 'pry-byebug'
 
+gem 'kaminari'
+

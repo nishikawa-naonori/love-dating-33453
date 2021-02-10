@@ -4,7 +4,8 @@ class RomancesController < ApplicationController
 
 
   def index
-    @romances = Romance.order('created_at DESC')
+    #@romances = Romance.order('created_at DESC')
+    @romances = Romance.page(params[:page]).per(2).order('created_at DESC')
   end
 
   def show

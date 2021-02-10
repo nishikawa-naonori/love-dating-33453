@@ -38,7 +38,7 @@
         <%= image_tag "4191062_l.png", class:"list-pict" %>
         <span class='reason-list-number'>2</span>
         <h3 class='reason-list-text'>
-          シンプルで使いやすい
+          シンプルイズベスト
         </h3>
         <p class='reason-list-description'>
           めんどくさい設定ははなく、検索もスムーズ！
@@ -95,22 +95,28 @@
                           <h3 class='item-name'>
                             <%= romance.title %>        
                           </h3>
+                          
                           <div class='item-price'>
                             名前：<%= romance.user.nickname %>
                           </div>
-                            <div class='item-price'>
+
+                          <div class='item-price'>
                             性別：<%= romance.user.seibetu.name %>
                           </div>
+
                           <div class='item-price'>
                             職業：<%= romance.user.work.name %>
                           </div>
+
                           <div class='item-price'>
                             読者：閲覧数 <%= romance.likes.count %>
                           </div>
                             <% if user_signed_in? %>  
+
                               <% if current_user.liked_by?(romance.id) %>   
                               既読済み  
                               <% end %>
+
                             <% end %>
                       </div>
 
@@ -130,7 +136,7 @@
           <h3 class='item-name'>
             記事を投稿してね！
           </h3>
-          <div class='item-price'>
+          <div >
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
@@ -145,6 +151,10 @@
   <span class='purchase-btn-text'>相談する</span>
   <%= image_tag '603344.png' , size: '585x50' ,class: "purchase-btn-icon" %>
 <% end %>
+
+   <div class='pagination1'>
+      <%= paginate @romances, class:"pagination" %>
+    </div>
 
 
 <%= render "shared/second-footer"%>

@@ -10,10 +10,10 @@ a {
 .title-contents {
   width: 100vw;
   height: 400px;
-  background-image: image-url('pair-1362858_1920.png');
+  background-image: image-url('bara.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: 50% 60%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,7 +50,7 @@ a {
 
 /* FURIMAが選ばれる3つの理由部分 */
 .select-reason-contents {
-  padding: 5vh 15vw;
+  padding: 2vh 15vw;
 }
 
 .select-reason-contents>.title1 {
@@ -77,10 +77,10 @@ a {
   text-align: center;
   font-weight: bold;
   font-size: 3.5vh;
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 	background-color: #fcf0f1; /* 背景色 */
 	color: #701722; /* 文字色 */
-	padding: 10px; /* 余白 */
+	padding: 18px; /* 余白 */
 	position: relative;
 }
 
@@ -94,20 +94,6 @@ a {
 	right: 0;
 	z-index: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -166,10 +152,12 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('anime.png');
+  height: 200px;
+  width: 100vw;
+  background-image: image-url('sss.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: 50% 35%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -178,6 +166,10 @@ a {
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
+
+
+
+
 
 .ad-title {
   font-size: 5vh;
@@ -255,11 +247,15 @@ a {
 /* 商品一覧 */
 
 .item-contents {
-  background-color: #FFF;
+  // background-image: image-url('bara.png');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: 50% 60%;
+   background-color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 4vh 0;
 }
 
 .item-contents>.title {
@@ -422,3 +418,26 @@ a {
   top: 0;/*アイコンの位置*/
   color: #ff938b; /*アイコン色*/
 }
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+// .pagination > li > a {
+//   border: none;
+//   color: #999;
+// }
+// .pagination > li > a:hover {
+//   color: turquoise;
+//   background-color: white;
+// }
+// .pagination > .active > a {
+//   color: turquoise;
+//   background-color: white;
+// }
+// .pagination > .active > a:hover {
+//   background-color: white;
+//   color: turquoise;
+// }
+/* --ページネーション */

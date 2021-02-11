@@ -1,9 +1,18 @@
 <%# ヘッダー -----------------------------------------------------------------------------------%>]
 
+
+
+
+<%= render "shared/second-header"%> 
+
+<%# <script>
+  console.log("aaaaaaaaaa"); 
+</script> %>
+
 <script>
 function rel() {
   if (window.name != "any") {
-    //alert("リロードします");
+  
     location.reload();
     window.name = "any";
   } else {
@@ -12,10 +21,6 @@ function rel() {
 }
 rel()
 </script>
-
-
-
-<%= render "shared/second-header"%> 
 
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
@@ -47,13 +52,6 @@ rel()
       <div id="email-error", class="red", hidden>※◯◯@◯◯の形での入力が必要です</div>
       <div id="email-error-uniq", class="red", hidden>使われてるメールアドレス</div>
     </div>
-
-
-
-
-
-
-
 
     <%# パスワードの入力----------------------------------------------------------------------- %>
     <div class="form-group">

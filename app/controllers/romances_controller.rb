@@ -55,14 +55,13 @@ class RomancesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @romances.update(romances_params)
-        format.html { redirect_to @romances, notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @romances }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @romances.errors, status: :unprocessable_entity }
-      end
+    
+
+    if @romance.update(romance_params_update)
+      #binding.pry
+      redirect_to romance_path(@romance.id)
+    else
+      render :edit
     end
   end
 

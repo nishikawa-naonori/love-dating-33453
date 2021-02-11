@@ -190,11 +190,64 @@
 
 }
 
+.links0 {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+}
+
+.comment{
+	margin: 0px 0px -29px 0px; /* 外側の余白 上下・左右 */
+	padding: 0px 0px 0px 0px; /* 内側の余白 上・右・下・左 */
+  width: 170px;
+}
+
+
+/* 
+.links1 {
+  display: flex;
+  justify-content: start; 
+  width: 50vw;
+}
+
+
+.links2 {
+  display: flex;
+
+  width: 50vw;
+
+} */
+
+
+
 .change-item-btn {
   font-size: 30px;
   text-decoration: none;
   color: #3CCACE;
 }
+
+.change-item-btn1 {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.change-item-btn2 {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  justify-content: end; 
+}
+
+
+
+.change-item-btn {
+  font-size: 30px;
+  text-decoration: none;
+  color: #3CCACE;
+}
+
+
 
 .another-item {
   display: block;

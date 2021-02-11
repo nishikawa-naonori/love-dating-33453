@@ -1,3 +1,17 @@
+<script>
+function rel() {
+  if (window.name != "any") {
+  
+    location.reload();
+    window.name = "any";
+  } else {
+    window.name = "";
+  }
+}
+rel()
+</script>
+
+
 <%= render "shared/header" %>
 
 <div class='main'>
@@ -26,33 +40,33 @@
     <ul class='reason-lists'>
       <li class='list'>
         <%= image_tag "4220178_s.png", class:"list-pict" %>
-        <span class='reason-list-number'>1</span>
+        <%# <span class='reason-list-number'>1</span> %>
         <h3 class='reason-list-text'>
           些細なことでも気軽に相談できる
         </h3>
-        <p class='reason-list-description'>
-          自分で溜め込まないでみんなに話そう！
-        </p>
+        <%# <p class='reason-list-description'>
+          自分で溜め込まずで皆に話そう！
+        </p> %>
       </li>
       <li class='list'>
         <%= image_tag "4191062_l.png", class:"list-pict" %>
-        <span class='reason-list-number'>2</span>
+        <%# <span class='reason-list-number'>2</span> %>
         <h3 class='reason-list-text'>
-          シンプルイズベスト
+          とっても簡単で検索もスムーズ
         </h3>
-        <p class='reason-list-description'>
-          めんどくさい設定ははなく、検索もスムーズ！
-        </p>
+        <%# <p class='reason-list-description'>
+          シンプルイズベストで検索もスムーズ！
+        </p> %>
       </li>
       <li class='list'>
         <%= image_tag "4193334_m.png", class:"list-pict" %>
-        <span class='reason-list-number'>3</span>
+        <%# <span class='reason-list-number'>3</span> %>
         <h3 class='reason-list-text'>
-          自分のアドバイスで誰かが幸せになれる
+          アドバイスで誰かが幸せにできる
         </h3>
-        <p class='reason-list-description'>
-          素晴らしい回答でトップアドバイザーになろー！
-        </p>
+        <%# <p class='reason-list-description'>
+          みんなで恋を成就させよー！　　　　　　
+        </p> %>
       </li>
     </ul>
   </div>
@@ -152,10 +166,21 @@
   <%= image_tag '603344.png' , size: '585x50' ,class: "purchase-btn-icon" %>
 <% end %>
 
- 
-      <%= paginate @romances, class:"pagination" %>
+ <div id="abcde" onclick="buttonClick()">
+      <%= paginate @romances, class:"pagination1"%>
+      <%= %>
+</div>
 
-
+<script>
+  function buttonClick(){
+    var a = document.documentElement;
+    var y = a.scrollHeight - a.clientHeight;
+    window.scroll(0, y);
+      console.log(y); 
+          console.log("wwwwwwwwww"); 
+      }
+   
+</script>
 
 <%= render "shared/second-footer"%>
 

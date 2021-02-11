@@ -1,16 +1,25 @@
 <%= render "shared/header" %>
 
+<div class="item-show">
+  <div class="item-box">
 
-<div class="box1">
-  <%= @comment.text %>
-</div>
+            <div class="box1">
+              <%= @comment.text %>
+            </div>
 
-                  <% if current_user == @comment.user %>  
-                    <%= link_to '編集する', edit_romance_comment_path(@comment) %> 
-                  <% end %>
-         <%#= link_to '編集する', edit_romance_comment_path(@comment) %> 
+
+
+          <% if current_user == @comment.user %>  
+
+               <%= link_to '編集する', edit_romance_comment_path(@comment),class:"sell-btn1" %>
+
+          <% end %>
+      
 
       
           <%= link_to 'コメントを削除', romance_comment_path(@comment.id), method: :delete, class:'item-destroy' , data: { confirm: '本当に削除しますか？' } %>
+</div>
+</div>
   
+<%= render "shared/second-footer"%>
 

@@ -30,6 +30,7 @@ if (document.URL.match( /sign_up/ )) {
           eMailError.removeAttribute("hidden")
         }
 
+        
         const eMailErrorUniq = document.getElementById("email-error-uniq")
         const XHR = new XMLHttpRequest();
         XHR.open("GET", `/users`, true);

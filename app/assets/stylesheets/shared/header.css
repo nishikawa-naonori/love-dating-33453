@@ -48,7 +48,9 @@
 .nav {
   font-size: 18px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  /* justify-content: center; */
+  justify-content: flex-end; 
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;

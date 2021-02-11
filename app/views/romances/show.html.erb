@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <%= render "shared/header" %>
 
 
@@ -13,9 +19,10 @@
           投稿者：<%= @romance.user.nickname %>
         <% end %>
     </div>
-
     <div class="box1">
-        <%= @romance.info1 %>
+        <div class="boxz">
+            <%= @romance.info1 %>
+        </div>
     </div>
     
     <%# ログインユーザーか？ %>
@@ -31,13 +38,15 @@
           <div class="container">
             <%= form_with(model: [@romance, @comment], local: true) do |form| %>
              <%# エラーメッセージ------------------------------------------------------------------------ %>
+              <div class='parent2'>
               <%= render 'shared/error_messages', model: form.object %>
+              </div>
              <%# エラーメッセージ------------------------------------------------------------------------ %>
              <%# binding.pry %>
 
                   <%= form.text_area :text, class:"box2", placeholder: "例）〇〇さん、アドバイスありがとう。何度もそのような話し合いはしているんですが。。。
 俺が悪かった直すと言って最後に機嫌取りをされての繰り返しで…冷めなんですかね…" %>
-                    <div style="text-align: center">
+                    <div class='parent2'>
                       <%= form.submit "アドバイザーに返信" ,class:"a111-btn" %>
                     </div>
                   <% end %>
@@ -71,22 +80,28 @@
             <% @comments.each do |comment| %>
             
                   <div class="box1">
+                   
+                    <div class="box1a">
+                      <% if comment.user == @romance.user %>  
+                          投稿者本人：<%= comment.user.nickname %>  
+                      <% else %>
+                          アドバイザー：<%= comment.user.nickname %>
+                      <% end %>
+                   </div>
 
-                    <% if comment.user == @romance.user %>  
-                        投稿者本人：<%= comment.user.nickname %>  <%#= link_to romance_comment_path(comment.id) do %>
-                    <% else %>
-                        アドバイザー：<%= comment.user.nickname %>
-                    <% end %>
+                  <div class="box1b">
+                    <%= comment.text %> </p>
+                  </div>
 
-                      <p><%= comment.text %> </p>
+                   <div class="box1c">
                       <% if current_user == comment.user %>  
-                        <%= link_to '編集する', romance_comment_path(@romance,comment) %> 
+                        <%= link_to '編集or削除', romance_comment_path(@romance,comment) %> 
                       <% end %>
 
                       <% if current_user == @romance.user %> 
                         <%= link_to '削除する', romance_comment_path(@romance,comment) %>
                       <% end %>
-
+                    </div>
                           <%#  binding.pry %>
 
                       <% if current_user == @romance.user %> 
@@ -129,24 +144,32 @@
       <% end %>
 
 
-      <div class="links">
-        <a href="#" class="change-item-btn">
-          ＜ 前の記事
-        </a>
-        <a href="#" class="change-item-btn">
-          後ろの記事 ＞
-        </a>
-      </div>
 
 
-<% if @romance.previous.present? %>
-<%= link_to "次のページ", romance_path(@romance.previous), class: "change-item-btn"%>
-<% end %>
+<div class="links0">
 
-<% if @romance.next.present? %>
-<%= link_to "前のページ",romance_path(@romance.next), class: "change-item-btn" %>
-<% end %>
+      <% if @romance.next.present? %>
+        <div>
+          <%= link_to "＜ 前の記事",romance_path(@romance.next), class: "change-item-btn" %>
 
+        <%# else %>
+         <%# <a href="#" class="change-item-btn">後ろの記事はありません</a> %>
+
+      <% end %>
+        </div>
+
+    <% if @romance.previous.present? %>
+      <div >
+        <%= link_to "後ろの記事 ＞", romance_path(@romance.previous), class: "change-item-btn"%>
+    
+    <% else %>
+
+    <a href="#" class="change-item-btn">後ろの記事はありません</a>
+
+    <% end %>
+        </div>
+
+</div>
 
 
 <%= render "shared/second-footer"%>

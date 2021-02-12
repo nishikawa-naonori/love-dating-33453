@@ -19,11 +19,23 @@
           投稿者：<%= @romance.user.nickname %>
         <% end %>
     </div>
+
+
+
+ <div id="kaiketuzumi", class="red2", hidden>※解決済</div>
+      
+        <div  class="comment1", id="kaiketu" >
+          <div class="btn-gradient-3d1">解決したよ </div>
+        </div>
+       
+
+
     <div class="box1">
         <div class="boxz">
             <%= @romance.info1 %>
         </div>
     </div>
+
     
     <%# ログインユーザーか？ %>
     <% if user_signed_in? %>  
@@ -108,6 +120,8 @@
                         <div  class="comment" data-id=<%= comment.id %> data-check=<%= comment.checked %>>
                           <div class="btn-gradient-3d">アドバイス読んだよ </div>
                         </div>
+
+
                       <% end %>
 
                       <% if current_user != @romance.user %> 

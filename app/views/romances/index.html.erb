@@ -105,11 +105,12 @@ rel()
               <div class='item-img-content'>
                 <%= image_tag romance.image, class: "item-img" %>
                           <%# 商品が売れていればsold outを表示しましょう %>
-                            <%# if item.purchase != nil    %>
+                            <%# binding.pry %>
+                            <% if romance.kaiketu %>
                                <div class='sold-out'> 
-                                 <span>Sold Out!!</span> 
+                                 <span>恋の悩み解決</span> 
                                </div> 
-                            <%# end %>
+                            <% end %>
                           <%# //商品が売れていればsold outを表示しましょう %>
               </div>
               

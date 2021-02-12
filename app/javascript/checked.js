@@ -7,12 +7,9 @@ function check() {
     }
     comment.setAttribute("data-load", "true");
 
-
     comment.addEventListener("click", () => { 
       const commentId = comment.getAttribute("data-id");
       
-      // const cccId     = document.getElementById("profit");   
-
       console.log(commentId); 
 
       const XHR = new XMLHttpRequest();                 //Ajax通信を可能にするためのオブジェクト
@@ -21,11 +18,6 @@ function check() {
       XHR.send();                                     // 送信する
 
       XHR.onload = () => {
-
-        // if (XHR.status != 200) {
-        //   alert(`Error ${XHR.status}: ${XHR.statusText}`);
-        //   return null;          
-        // }
 
         const item = XHR.response.comment;
 

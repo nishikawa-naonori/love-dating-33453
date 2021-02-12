@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       get 'search'
     end
 
+    collection do
+      get 'kaiketu'
+    end
+
     member do
       get 'checked'
     end

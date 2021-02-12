@@ -14,8 +14,6 @@ require("../relood")
 
 require("../error")
 
-require("../kaiketu")
-
 require("../abcde")
 
 // require("../create")

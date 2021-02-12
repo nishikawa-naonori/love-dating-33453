@@ -3,7 +3,9 @@
 .item-show {
   
   /* background-color: #1E00FF; */
-  background-color: #f8f8f8;
+  background-image: image-url('bara.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -13,6 +15,7 @@
 
 .item-box {
   background-color: #FFF;
+  // background-image: image-url('saku.png');
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
@@ -204,6 +207,11 @@
   width: 170px;
 }
 
+.comment1{
+	margin: 0px 0px -29px 0px; /* 外側の余白 上下・左右 */
+	padding: 0px 0px 0px 0px; /* 内側の余白 上・右・下・左 */
+  width: 170px;
+}
 
 /* 
 .links1 {

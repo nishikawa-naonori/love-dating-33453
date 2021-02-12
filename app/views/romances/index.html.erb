@@ -104,37 +104,45 @@ rel()
             <%= link_to romance_path(romance.id) do %>
               <div class='item-img-content'>
                 <%= image_tag romance.image, class: "item-img" %>
-
-                      <div class='item-info'>
-                          <h3 class='item-name'>
-                            <%= romance.title %>        
-                          </h3>
-                          
-                          <div class='item-price'>
-                            名前：<%= romance.user.nickname %>
-                          </div>
-
-                          <div class='item-price'>
-                            性別：<%= romance.user.seibetu.name %>
-                          </div>
-
-                          <div class='item-price'>
-                            職業：<%= romance.user.work.name %>
-                          </div>
-
-                          <div class='item-price'>
-                            読者：閲覧数 <%= romance.likes.count %>
-                          </div>
-                            <% if user_signed_in? %>  
-
-                              <% if current_user.liked_by?(romance.id) %>   
-                              既読済み  
-                              <% end %>
-
-                            <% end %>
-                      </div>
-
+                          <%# 商品が売れていればsold outを表示しましょう %>
+                            <%# if item.purchase != nil    %>
+                               <div class='sold-out'> 
+                                 <span>Sold Out!!</span> 
+                               </div> 
+                            <%# end %>
+                          <%# //商品が売れていればsold outを表示しましょう %>
               </div>
+              
+              <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= romance.title %>        
+                  </h3>
+                  
+                  <div class='item-price'>
+                    名前：<%= romance.user.nickname %>
+                  </div>
+
+                  <div class='item-price'>
+                    性別：<%= romance.user.seibetu.name %>
+                  </div>
+
+                  <div class='item-price'>
+                    職業：<%= romance.user.work.name %>
+                  </div>
+
+                  <div class='item-price'>
+                    読者：閲覧数 <%= romance.likes.count %>
+                  </div>
+                    <% if user_signed_in? %>  
+
+                      <% if current_user.liked_by?(romance.id) %>   
+                      既読済み  
+                      <% end %>
+
+                    <% end %>
+              </div>
+
+           
             <% end %>
 
           </li>

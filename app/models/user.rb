@@ -5,7 +5,6 @@ class User < ApplicationRecord
 
     belongs_to :seibetu
     belongs_to :work
-    belongs_to :age
 
     has_many :comments, dependent: :destroy
   
@@ -30,9 +29,7 @@ class User < ApplicationRecord
     validates :work_id
   end
 
-  with_options numericality: { other_than: 1 , message: 'を選んでください'} do
-    validates :age_id
-  end
+
 
     def liked_by?(romance_id)
       likes.where(romance_id: romance_id).exists?

@@ -78,27 +78,33 @@ rel()
     <div class="form-group">
       <div class="items-detail">
         <div class="form">
+
           <div class="weight-bold-text">
             性別
             <span class="indispensable">必須</span>
           </div>
+
           <%= f.collection_select(:seibetu_id, Seibetu.all, :id, :name, {}, {class:"select-box"}) %>
+
           <div class="weight-bold-text">
             職業
             <span class="indispensable">必須</span>
           </div>
+
           <%= f.collection_select(:work_id, Work.all, :id, :name, {}, {class:"select-box"}) %>
+
+          <div class="weight-bold-text">
+            年齢
+            <span class="indispensable">必須</span>
+          </div>
+
+          <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box"}) %>
+
         </div>
       </div>
     </div>
     <%# 年齢の入力----------------------------------------------------------------------- %>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">年齢</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :age, class:"input-default", id:"age", placeholder:"例) 18歳", maxlength:"40" %>
-    </div>
+
 
 
 

@@ -14,7 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## 職業
       t.integer :work_id,           null: false
       ## 年齢
-      t.string :age,                null: false, default: ""
+      t.string :age_id,                null: false            
 
       t.timestamps null: false
 

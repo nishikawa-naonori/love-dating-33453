@@ -169,6 +169,12 @@ div[data-check="true"]:after {
   content: "既読完了";
 }
 
+div[data-check1="true"]:after {
+  /* background: #585555; */
+  content: "悩みが解決";
+}
+
+
 .price-content {
   width: 300px;
   border-bottom: 1px solid #ccc;

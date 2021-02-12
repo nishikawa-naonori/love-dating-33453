@@ -10,6 +10,8 @@ require("channels")
 
 require("../checked")
 
+require("../kaiketu")
+
 require("../relood")
 
 require("../error")

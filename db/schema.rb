@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_02_02_052202) do
   create_table "romances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.text "info1", null: false
-    t.string "kaiketu", default: "", null: false
+    t.boolean "kaiketu"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

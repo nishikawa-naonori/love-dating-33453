@@ -87,8 +87,6 @@ class RomancesController < ApplicationController
   def checked
 
     comment = Comment.find(params[:id])
-
-    # commentテーブルのカラム  値があるか？
     
     if comment.checked 
       comment.update(checked: false)
@@ -102,6 +100,16 @@ class RomancesController < ApplicationController
 
   
   def kaiketu
+    romance = Romance.find(params[:id])
+    
+    if romance.kaiketu 
+      romance.update(kaiketu: false)
+    else
+      romance.update(kaiketu: true)
+    end
+
+    item = Romance.find(params[:id])
+    render json: { romance: item }
   end
 
   private

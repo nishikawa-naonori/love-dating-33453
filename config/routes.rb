@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'search'
     end
 
-    collection do
+    member do
       get 'kaiketu'
     end
 

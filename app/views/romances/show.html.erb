@@ -34,12 +34,15 @@
           <%= link_to '記事を削除', romance_path(@romance.id), method: :delete, class:'item-destroy' , data: { confirm: '本当に削除しますか？' } %>
       
                     
-          <div  class="comment" data-id=<%= @romance.id %> data-check=<%= @romance.kaiketu %>>
-            <div class="btn-gradient-3d">アドバイス読んだよ </div>
+          <div  class="romance" data-id1=<%= @romance.id %> data-check1=<%= @romance.kaiketu %>>
+            <div class="btn-gradient-3d1">解決したよ </div>
           </div>
-                    
 
+            <% if @romance.kaiketu %> 
+              <div  class="red2">投稿者：解決済み </div>
+            <% end %>
 
+ <% binding.pry %>
         <% if @comments[0] != nil %>  
 
           <div class="container">
@@ -116,7 +119,7 @@
                           <div class="btn-gradient-3d">アドバイス読んだよ </div>
                         </div>
                       <% end %>
-
+ <%# binding.pry %>
                       <% if current_user != @romance.user %> 
                         <% if comment.checked %> 
                           <div  class="red1">投稿者：既読済み </div>

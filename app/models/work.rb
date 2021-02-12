@@ -5,7 +5,9 @@ class Work < ActiveHash::Base
     { id: 3, name: '会社員' },
     { id: 4, name: '公務員' },
     { id: 5, name: '自営業' },
-    { id: 6, name: '職業は答えたくない' },
+    { id: 6, name: '公営競技' },
+    { id: 7, name: 'スポーツ選手' },
+    { id: 8, name: '職業は答えたくない' },
   ]
   include ActiveHash::Associations
   has_many :users

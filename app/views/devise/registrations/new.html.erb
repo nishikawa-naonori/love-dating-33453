@@ -50,7 +50,7 @@ rel()
       
       <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
       <div id="email-error", class="red", hidden>※◯◯@◯◯の形での入力が必要です</div>
-      <div id="email-error-uniq", class="red", hidden>使われてるメールアドレス</div>
+      <div id="email-error-uniq", class="red", hidden>登録済みのメールアドレスです</div>
     </div>
 
     <%# パスワードの入力----------------------------------------------------------------------- %>
@@ -95,9 +95,10 @@ rel()
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">年齢</label>
-        <span class="indispensable">必須</span>
+        <span class="indispensable">任意</span>
       </div>
-      <%= f.text_area :age, class:"input-default", id:"age", placeholder:"例) 18歳", maxlength:"40" %>
+      <%= f.text_area :age, value: "例) 18歳", class:"input-default", id:"age", placeholder:"例) 18歳", maxlength:"10" %>
+      <%#= f.text_area :age, class:"input-default", id:"age", placeholder:"例) 18歳", maxlength:"10" %>
     </div>
 
 

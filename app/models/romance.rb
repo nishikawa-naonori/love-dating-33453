@@ -6,15 +6,25 @@ class Romance < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
 
-  #has_many :likes, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-
-  validates :image, presence: true
-
+#バリデーション----------------------------------------------
 
 
-  # has_many :liked_users, through: :likes, source: :user
+with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: 'を選択してください' } do
+  validates :image
+end
+
+  # validates :image, presence: true
+
+
+  validates :title, presence: true
+
+  validates :info1, presence: true
+
+
+
+
 
 
   

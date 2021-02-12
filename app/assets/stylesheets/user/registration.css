@@ -180,3 +180,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.red {
+  background: rgb(235, 169, 209);
+  color: rgb(220, 21, 21);
+}

@@ -29,7 +29,7 @@ class User < ApplicationRecord
     validates :work_id
   end
 
-
+  validates :age, presence: true
 
     def liked_by?(romance_id)
       likes.where(romance_id: romance_id).exists?

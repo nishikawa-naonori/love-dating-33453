@@ -100,6 +100,9 @@ class RomancesController < ApplicationController
     render json: { comment: item }
   end
 
+  
+  def kaiketu
+  end
 
   private
 

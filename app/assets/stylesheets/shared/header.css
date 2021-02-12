@@ -75,8 +75,9 @@
 
 .lists-right {
   display: flex;
-  list-style: none;
-  align-items: flex-end;
+  margin: 0px 0px 0px 0px;
+  /* list-style: none; */
+  /* align-items: flex-end; */
 }
 
 
@@ -95,7 +96,7 @@
 
 .login {
   text-decoration: none;
-  line-height: 32px;
+  /* line-height: 32px; */
   margin-right: 3vw;
   color: #333333;
 }
@@ -103,4 +104,5 @@
 .sign-up {
   text-decoration: none;
   color: #333333;
+  margin: 0px 0px 0px 0px;
 }

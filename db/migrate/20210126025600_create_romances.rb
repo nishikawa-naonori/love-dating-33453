@@ -5,6 +5,10 @@ class CreateRomances < ActiveRecord::Migration[6.0]
       t.string :title,              null: false, default: ""
       ## 悩みの説明
       t.text :info1,                null: false
+
+      ## タイトル
+      t.string :kaiketu,             null: false, default: ""
+
       ## ユーザー管理テーブルとのアソシエーション
       t.references :user, foreign_key: true
       ## 投稿時間

@@ -33,6 +33,13 @@
           <%= link_to '編集する', edit_romance_path(@romance.id), method: :get, class: "item-red-btn" %>
           <%= link_to '記事を削除', romance_path(@romance.id), method: :delete, class:'item-destroy' , data: { confirm: '本当に削除しますか？' } %>
       
+                    
+          <div  class="comment" data-id=<%= @romance.id %> data-check=<%= @romance.kaiketu %>>
+            <div class="btn-gradient-3d">アドバイス読んだよ </div>
+          </div>
+                    
+
+
         <% if @comments[0] != nil %>  
 
           <div class="container">

@@ -11,7 +11,7 @@ class Romance < ApplicationRecord
 #バリデーション----------------------------------------------
 
 
-with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: 'を選択してください' } do
+with_options presence: { message: 'を選択してください' } do
   validates :image
 end
 

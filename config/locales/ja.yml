@@ -6,3 +6,18 @@ ja:
         previous: '前'
         next: '次'
         truncate: '...'
+  activerecord:
+    # 追加
+    attributes:
+      user:
+        nickname: 名前
+        email: メールアドレス
+        password: パスワード
+        seibetu_id: 性別
+        work_id: 職業or学生
+      romance:
+        image: 写真
+        title: タイトル
+        info1: 文章
+
+    # ここまで

@@ -1,6 +1,8 @@
 /* 商品の概要 */
 
 .item-show {
+  
+  /* background-color: #1E00FF; */
   background-color: #f8f8f8;
   width: 100vw;
   display: flex;

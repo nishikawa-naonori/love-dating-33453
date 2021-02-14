@@ -9,7 +9,7 @@ class RomancesController < ApplicationController
   end
 
   def show
-    
+    #    @romance = Romance.find(params[:id])
     @comment = Comment.new
     @comments = @romance.comments.includes(:user).order('created_at DESC')
   end

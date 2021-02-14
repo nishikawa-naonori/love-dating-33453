@@ -6,7 +6,7 @@
       <% if current_user.liked_by?(romance.id) %>     
           <td>
             観閲済マークをはずす
-                            <% binding.pry %>
+                            <%# binding.pry %>
             <%= link_to romance_destroy_like_path(romance), class: "like-link", data: { confirm: '本当に取り消しますか？' }, method: :DELETE, remote: true do %>
               <i class="fa fa-heart unlike-btn"></i>
             <% end %>
@@ -15,7 +15,7 @@
       <% else %>
           <td>
               観閲済マークを付ける
-                  <% binding.pry %>
+                  <%# binding.pry %>
               <%= link_to romance_create_like_path(romance), class: "like-link", method: :POST, remote: true do %>
                 <i class="fa fa-heart like-btn"></i>
               <% end %>

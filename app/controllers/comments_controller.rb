@@ -1,21 +1,20 @@
 class CommentsController < ApplicationController
   def create
-   # comment = Comment.create(comment_params)
     @comment = Comment.new(comment_params)
     #binding.pry
     if @comment.save
       redirect_to "/romances/#{@comment.romance.id}"  # コメントの完了後の遷移
     else
-    #  @comment = Comment.find(params[:id])
+      
       @romance = Romance.find(params[:romance_id])
-      #@comment = Comment.new
       @comments = @romance.comments.includes(:user).order('created_at DESC')
+      #@comments = @romance.comments.order('created_at DESC')
+      #binding.pry
+      #redirect_to "/romances/#{@comment.romance.id}"  # コメントの完了後の遷移
       render "romances/show" # views/tweets/show.html.erbのファイルを参照しています。
 
-      # redirect_to "/romances/#{comment.romance.id}"  # コメントの完了後の遷移
-    #  @prototype = @comment.prototype
-     # @comments = @prototype.comments
-    #  render "prototypes/show" # views/tweets/show.html.erbのファイルを参照しています。
+
+
      
     end
   end
@@ -50,11 +49,6 @@ class CommentsController < ApplicationController
     #render :show
     redirect_to "/romances/#{@comment.romance.id}"
   end
-
-
-
-
-
 
   private
   def comment_params

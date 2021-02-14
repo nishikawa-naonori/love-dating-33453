@@ -2,5 +2,6 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :romance, optional: true  # tweetsテーブルとのアソシエーション
 
-  validates :text, presence: true
+  # バリデーション
+  validates :text, length: { in: 2..100 }
 end

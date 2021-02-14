@@ -16,8 +16,10 @@ ja:
         seibetu_id: 性別
         work_id: 職業or学生
       romance:
-        image: 写真
-        title: タイトル
-        info1: 文章
+          image: 写真
+          title: タイトル
+          info1: 文章
+      comment:
+          text: コメント文
 
     # ここまで

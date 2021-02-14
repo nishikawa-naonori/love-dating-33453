@@ -145,45 +145,11 @@
           <tbody>
               <tr id="romance_<%= @romance.id %>">
                 <%#= render 'romance', romance: @romance %>   <%#  %>
-                <%#= render partial: 'romances/romance', locals: { romance: @romance } %>
-                
-                <% if user_signed_in? %>  
-                      <% if current_user.liked_by?(@romance.id) %>     
-                          <td>
-                            観閲済マークをはずす
-                                            <%# binding.pry %>
-                            <%= link_to romance_destroy_like_path(@romance), class: "like-link", data: { confirm: '本当に取り消しますか？' }, method: :DELETE, remote: true do %>
-                              <i class="fa fa-heart unlike-btn"></i>
-                            <% end %>
-                            <%= @romance.likes.count %>
-                          </td>
-                      <% else %>
-                          <td>
-                              観閲済マークを付ける
-                                  <%# binding.pry %>
-                              <%= link_to romance_create_like_path(@romance), class: "like-link", method: :POST, remote: true do %>
-
-                              <% end %>
-                            <%= @romance.likes.count %>
-                          </td>
-                      <% end %>
-                <% else %>
-                    <td> 読者:閲覧数<%= @romance.likes.count %> </td>
-                <% end %>
-
-
-
-
+                <%= render partial: 'romances/romance', locals: { romance: @romance } %>
               </tr>
           </tbody>
         </table>
       <% end %>
-
-
-
-
-
-
 
 
 

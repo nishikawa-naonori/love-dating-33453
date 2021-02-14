@@ -7,13 +7,12 @@ class CommentsController < ApplicationController
     else
       
       @romance = Romance.find(params[:romance_id])
-      comments = @romance.comments.includes(:user).order('created_at DESC')
+      @comments = @romance.comments.includes(:user).order('created_at DESC')
       #@comments = @romance.comments.order('created_at DESC')
       #binding.pry
       #redirect_to "/romances/#{@comment.romance.id}"  # コメントの完了後の遷移
       render "romances/show" # views/tweets/show.html.erbのファイルを参照しています。
-      
-      #render partial: 'romances/show', locals: { comments: comments }
+
 
 
      

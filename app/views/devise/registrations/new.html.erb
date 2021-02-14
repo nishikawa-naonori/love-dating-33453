@@ -5,10 +5,6 @@
 
 <%= render "shared/second-header"%> 
 
-<%# <script>
-  console.log("aaaaaaaaaa"); 
-</script> %>
-
 <script>
 function rel() {
   if (window.name != "any") {
@@ -49,7 +45,7 @@ rel()
       </div>
       
       <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
-      <div id="email-error", class="red", hidden>※◯◯@◯◯の形での入力が必要です</div>
+      <div id="email-error", class="red", hidden>◯◯@◯○.◯○の形での入力が必要です</div>
       <div id="email-error-uniq", class="red", hidden>登録済みのメールアドレスです</div>
     </div>
 

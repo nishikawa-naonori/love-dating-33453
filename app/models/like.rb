@@ -8,5 +8,6 @@ class Like < ApplicationRecord
 
   validates_uniqueness_of :romance_id, scope: :user_id
 
+  
 
 end

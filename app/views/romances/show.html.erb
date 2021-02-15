@@ -16,9 +16,12 @@
 
     <div class="box0">
         <%#= link_to '#', class:'abc' do %>
-        <%= link_to '#', class:'abc' do %>
-          投稿者：<%= @romance.user.nickname %>
-        <% end %>
+           <%# binding.pry %>
+
+        <%= link_to "投稿者：#{@romance.user.nickname}", user_path(@romance.user.id),class:'abc' %>
+         <%#= link_to "投稿者：#{@romance.user.nickname}", "/users/#{@romance.user.id}", class:'abc' %>
+        
+        
     </div>
     <div class="box1">
         <div class="boxz">

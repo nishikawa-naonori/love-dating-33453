@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render "shared/header" %>
+
+
+<div class="user-show">
+    <div class="ccc">
+        <div class="mybox1" >
+          ユーザーのプロフィール
+        </div>
+        <div  class="bbb1">
+          名前：<%= @user.nickname  %>
+        </div>
+        <div class="bbb2">
+          性別：<%= @user.seibetu.name %> 
+        </div>
+        <div class="bbb3">
+          職業：<%= @user.work.name %>
+         </div>
+        <div class="bbb4">
+          年齢：<%= @user.age %>歳
+        </div>
+    </div>
+</div>
+
+<%= render "shared/second-footer"%>

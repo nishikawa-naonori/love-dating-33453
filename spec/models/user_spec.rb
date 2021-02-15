@@ -1,3 +1,5 @@
+#   bundle exec rspec spec/models/user_spec.rb 
+
 require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
@@ -67,7 +69,7 @@ RSpec.describe User, type: :model do
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmationとパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end
         #---------------------------------------------------------
       it '性別を選択しないと登録できない' do
@@ -80,6 +82,12 @@ RSpec.describe User, type: :model do
         @user.work_id  = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("職業or学生を選んでください")
+      end
+        #---------------------------------------------------------
+      it '年齢を入力しないと登録できない' do
+        @user.age  = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("年齢を入力してください")
       end
         #---------------------------------------------------------
     end

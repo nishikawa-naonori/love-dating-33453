@@ -29,6 +29,11 @@ class User < ApplicationRecord
     validates :work_id
   end
 
+
+  with_options presence: true, format: { with: /\A[0-9０-９]+\z/, message: 'は数字のみを入力してください' } do
+    validates :age
+  end
+
   # validates :age, presence: true
 
     def liked_by?(romance_id)

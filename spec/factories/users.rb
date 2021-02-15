@@ -6,6 +6,6 @@ FactoryBot.define do
     password_confirmation { password }
     seibetu_id            { 2 }
     work_id               { 2 }
-    age                   { '18歳' }
+    age                   { 18 }
   end
 end

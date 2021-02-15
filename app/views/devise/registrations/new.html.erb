@@ -91,9 +91,9 @@ rel()
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">年齢</label>
-        <span class="indispensable">任意</span>
+        <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :age, value: "例) 18歳", class:"input-default", id:"age", placeholder:"例) 18歳", maxlength:"10" %>
+      <%= f.text_area :age, class:"input-default", id:"age", placeholder:"例) 18", maxlength:"2" %>
       <%#= f.text_area :age, class:"input-default", id:"age", placeholder:"例) 18歳", maxlength:"10" %>
     </div>
 

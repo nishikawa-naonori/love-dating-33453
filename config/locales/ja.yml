@@ -15,6 +15,7 @@ ja:
         password: パスワード
         seibetu_id: 性別
         work_id: 職業or学生
+        age: 年齢
       romance:
           image: 写真
           title: タイトル

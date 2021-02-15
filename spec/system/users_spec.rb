@@ -1,3 +1,5 @@
+# bundle exec rspec spec/system/users_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe 'ユーザー新規登録', type: :system do
@@ -21,6 +23,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       #fill_in 'user_seibetu_id', with: @user.user_seibetu_id
       select '男性',from: 'user[seibetu_id]'
       select '中学生',from: 'user[work_id]'
+      fill_in 'age', with: @user.age
 
       #binding.pry
 
@@ -57,6 +60,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'password-confirmation', with: ""
       select '--',from: 'user[seibetu_id]'
       select '--',from: 'user[work_id]'
+      fill_in 'age', with: ""
 
       # サインアップボタンを押してもユーザーモデルのカウントは上がらないことを確認する
       expect{

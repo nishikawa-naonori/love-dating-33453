@@ -45,6 +45,7 @@ class RomancesController < ApplicationController
   def destroy
     
     @romance.destroy
+    
     respond_to do |format|
       format.html { redirect_to romances_url, notice: "Romance was successfully destroyed." }
       format.json { head :no_content }

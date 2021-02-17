@@ -1,11 +1,12 @@
 # アプリケーション名
 ラブライク
 # アプリケーション概要
-
+恋の悩みを話し合って解決する
 # URL
-
-
+https://love-dating-33453.herokuapp.com/
 # テスト用アカウント
+メールアドレス watar.wind.xyz1990@gmail.com
+パスワード     111111a
 
 # 利用方法
 

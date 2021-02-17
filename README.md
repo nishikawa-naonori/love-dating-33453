@@ -18,9 +18,7 @@ https://love-dating-33453.herokuapp.com/
 # データベース設計                       
 
 
-## -------------------------------------------
 ## users テーブル                              
-## -------------------------------------------
 | Column             | Type   | Options      |
 | --------           | ------ | -----------  |
 | nickname           | string | null: false  |
@@ -31,7 +29,7 @@ https://love-dating-33453.herokuapp.com/
 | work               | string | null: false  |
 
 
-### Association(アソシエーション)
+### アソシエーション
 
 - has_many :love
 - has_many :comment

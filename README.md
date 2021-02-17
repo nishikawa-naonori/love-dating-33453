@@ -28,14 +28,13 @@ https://love-dating-33453.herokuapp.com/
 | age                | string | null: false  |
 | work               | string | null: false  |
 
-
 ### アソシエーション
+- belongs_to :seibetu
+- belongs_to :work
 
-- has_many :love
+- has_many :romance
 - has_many :comment
-- has_many :tip
-
-
+- has_many :likes
 
 
 ## -------------------------------------------

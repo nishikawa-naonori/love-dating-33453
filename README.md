@@ -5,7 +5,7 @@
 # URL
 https://love-dating-33453.herokuapp.com/
 # テスト用アカウント
-メールアドレス watar.wind.xyz1990@gmail.com
+メールアドレス watar.wind.xyz1990@gmail.com<br>
 パスワード     111111a
 
 # 利用方法

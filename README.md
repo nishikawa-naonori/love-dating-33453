@@ -157,6 +157,10 @@ Pass 2222<br>
 
 ![ER image](ER4.png)
 
+## ER図
+
+![ER image](ERzu.png)
+
 # ローカルでの動作方法
 
 rails バージョン 6.0.0

@@ -79,3 +79,5 @@ Pass 2222<br>
 ### アソシエーション
 - belongs_to :user
 - belongs_to :romance
+
+![ER image](ER.png)

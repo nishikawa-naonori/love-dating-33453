@@ -127,7 +127,7 @@ Pass 2222<br>
 - has_many         :comments
 - has_many         :likes
 
-※ 画像に関してはhas_one_attachedを使用している
+※ 画像に関してはactive_storageを使用している
 
 ## comments テーブル
 
@@ -153,7 +153,9 @@ Pass 2222<br>
 - belongs_to :user
 - belongs_to :romance
 
-![ER image](ER3.png)
+## 画面遷移図
+
+![ER image](ER4.png)
 
 # ローカルでの動作方法
 

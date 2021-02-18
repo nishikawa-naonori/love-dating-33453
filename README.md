@@ -86,3 +86,4 @@ Pass 2222<br>
 
 git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述しましょう。この時、アプリケーション開発に使用した環境を併記することを忘れないでください（パッケージやRubyのバージョンなど）。
 
+https://github.com/nishikawa-naonori/love-dating-33453.git

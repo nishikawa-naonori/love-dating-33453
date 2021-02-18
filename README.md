@@ -53,10 +53,7 @@ https://love-dating-33453.herokuapp.com/
 - has_many         :comments
 - has_many         :likes
 
-
-## -------------------------------------------
 ## comments テーブル
-## -------------------------------------------
 
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
@@ -69,10 +66,7 @@ https://love-dating-33453.herokuapp.com/
 - belongs_to :user
 - belongs_to :romance
 
-## -------------------------------------------
 ## likes テーブル
-## -------------------------------------------
-
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
 | user       | references | null: false, foreign_key: true |

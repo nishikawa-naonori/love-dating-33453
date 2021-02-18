@@ -18,7 +18,7 @@ end
   # validates :image, presence: true
 
 
-  validates :title, presence: true
+  validates :title, length: { in: 6..30 }
 
   validates :info1, length: { in: 10..1000 }
 

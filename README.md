@@ -27,7 +27,7 @@ Pass 2222<br>
 
 # 洗い出した要件
 
-これは<span style="color: red; ">赤文字</span>です
+これは<span style="color: #f03c15; ">赤文字</span>です
 <span style="color: green"> Some green text </span>
 - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015`

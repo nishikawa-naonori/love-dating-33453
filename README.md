@@ -61,23 +61,23 @@ https://love-dating-33453.herokuapp.com/
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
 | user       | references | null: false, foreign_key: true |
-| love       | references | null: false, foreign_key: true |
-| info2      | text       | null: false |
+| romance    | references | null: false, foreign_key: true |
+| text       | text       | null: false |
 
-### Association(アソシエーション)
+### アソシエーション
 
 - belongs_to :user
-- belongs_to :love
+- belongs_to :romance
 
 ## -------------------------------------------
-## tips テーブル
+## likes テーブル
 ## -------------------------------------------
 
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
 | user       | references | null: false, foreign_key: true |
-| love       | references | null: false, foreign_key: true |
-| money      | integer    | null: false                    |
+| romance    | references | null: false, foreign_key: true |
 
+### アソシエーション
 - belongs_to :user
-- belongs_to :love
+- belongs_to :romance

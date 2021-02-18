@@ -28,7 +28,15 @@ Pass 2222<br>
 # 洗い出した要件
 
 これは<span style="color: red; ">赤文字</span>です
-<font color="Pink">テスト</font>
+<span style="color: green"> Some green text </span>
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0`
+
+```diff
++ this will be highlighted in green
+- this will be highlighted in red
+```
 
 <p>１・ユーザー管理機能</p><br>
 <p>２・記事一覧表示機能</p><br>

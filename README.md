@@ -27,19 +27,6 @@ Pass 2222<br>
 
 # 洗い出した要件
 
-これは<span style="color: #f03c15; ">赤文字</span>です
-<span style="color: green"> Some green text </span>
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0`
-
-```diff
-+ this will be highlighted in green
-- this will be highlighted in red
-+ テスト
-- テスト
-```
-
 - １・ユーザー管理機能<br>
 - ２・記事一覧表示機能<br>
 - ３・記事投稿機能<br>
@@ -61,7 +48,7 @@ Pass 2222<br>
 
 # 実装した機能についての説明
 
-<h5>ユーザー管理機能</h5><br>
+|<h5>ユーザー管理機能</h5>|<br>
 各ユーザーごとの機能を持たせるため、新規登録/ログイン/ログアウトができる<br>
 <h5>記事一覧表示機能</h5><br>
 ユーザーが全ての記事を閲覧でき、投稿された記事はトップページに一覧で新しい順に左から表示<br>

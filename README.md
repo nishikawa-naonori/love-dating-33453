@@ -36,6 +36,8 @@ Pass 2222<br>
 ```diff
 + this will be highlighted in green
 - this will be highlighted in red
++ テスト
+- テスト
 ```
 
 <p>１・ユーザー管理機能</p><br>

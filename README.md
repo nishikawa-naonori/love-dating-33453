@@ -24,7 +24,7 @@ https://love-dating-33453.herokuapp.com/
 | nickname           | string | null: false  |
 | email              | string | unique: true |
 | encrypted_password | string | null: false  |
-| seibetu            | string | null: false  |
+| seibetu_id         | string | null: false  |
 | age                | string | null: false  |
 | work               | string | null: false  |
 
@@ -32,30 +32,26 @@ https://love-dating-33453.herokuapp.com/
 - belongs_to :seibetu
 - belongs_to :work
 
-- has_many :romance
-- has_many :comment
+- has_many :romances
+- has_many :comments
 - has_many :likes
 
 
-## -------------------------------------------
-## loves テーブル
-## -------------------------------------------
+## romances テーブル
 | Column           | Type       | Options     |
 | ------           | ------     | ----------- |
 | user             | referrence | null: false, foreign_key: true |
-| category_id      | integer    | null: false |
 | title            | string     | null: false |
 | info1            | text       | null: false |
+| kaiketu          | boolean    | null: false |
 
 
-### Association(アソシエーション)
-
+### アソシエーション
 - belongs_to :user
 
-- has_many   :comment
-- has_many   :tip
-
-
+- has_one_attached :image
+- has_many         :comments
+- has_many         :likes
 
 
 ## -------------------------------------------

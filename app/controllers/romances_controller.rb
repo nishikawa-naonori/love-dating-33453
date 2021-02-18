@@ -1,10 +1,9 @@
 class RomancesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :set_romance, only: %i[ show edit update destroy ]
-
+  before_action :set_romance, only: %i[show edit update destroy]
 
   def index
-    #@romances = Romance.order('created_at DESC')
+    # @romances = Romance.order('created_at DESC')
     @romances = Romance.page(params[:page]).per(2).order('created_at DESC')
   end
 
@@ -29,7 +28,7 @@ class RomancesController < ApplicationController
 
     respond_to do |format|
       if @romance.save
-        format.html { redirect_to @romance, notice: "Romance was successfully created." }
+        format.html { redirect_to @romance, notice: 'Romance was successfully created.' }
         format.json { render :show, status: :created, location: @romance }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,60 +36,48 @@ class RomancesController < ApplicationController
       end
     end
     # --------------------------------------------------------------
-
   end
 
-
-
   def destroy
-    
     @romance.destroy
-    
+
     respond_to do |format|
-      format.html { redirect_to romances_url, notice: "Romance was successfully destroyed." }
+      format.html { redirect_to romances_url, notice: 'Romance was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
 
   def edit
   end
 
   def update
-    
-
     if @romance.update(romance_params_update)
-      #binding.pry
+      # binding.pry
       redirect_to romance_path(@romance.id)
     else
       render :edit
     end
   end
 
-
   def search
-    #@romances = SearchRomancesService.search(params[:keyword])
+    # @romances = SearchRomancesService.search(params[:keyword])
 
     # キーワード分割
     keywords = params[:keyword].split(/[[:blank:]]+/).select(&:present?)
 
     # 空のモデルオブジェクト作成（何も入っていない空配列のようなもの）
     @romances = Romance.none
- 
 
     # 検索ワードの数だけor検索を行う
     keywords.each do |keyword|
-
-      @romances = @romances.or(Romance.where("title LIKE ?", "%#{keyword}%"))
+      @romances = @romances.or(Romance.where('title LIKE ?', "%#{keyword}%"))
     end
-
   end
 
   def checked
-
     comment = Comment.find(params[:id])
-    
-    if comment.checked 
+
+    if comment.checked
       comment.update(checked: false)
     else
       comment.update(checked: true)
@@ -100,11 +87,10 @@ class RomancesController < ApplicationController
     render json: { comment: item }
   end
 
-  
   def kaiketu
     romance = Romance.find(params[:id])
-    
-    if romance.kaiketu 
+
+    if romance.kaiketu
       romance.update(kaiketu: false)
     else
       romance.update(kaiketu: true)
@@ -124,9 +110,7 @@ class RomancesController < ApplicationController
     @romance = Romance.find(params[:id])
   end
 
-
   def romance_params_update
     params.require(:romance).permit(:image, :title, :info1)
   end
-
 end

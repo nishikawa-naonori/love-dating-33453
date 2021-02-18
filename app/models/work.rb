@@ -10,7 +10,7 @@ class Work < ActiveHash::Base
     { id: 8, name: '自営業' },
     { id: 9, name: '公営競技' },
     { id: 10, name: 'スポーツ選手' },
-    { id: 11, name: '職業は答えたくない' },
+    { id: 11, name: '職業は答えたくない' }
   ]
   include ActiveHash::Associations
   has_many :users

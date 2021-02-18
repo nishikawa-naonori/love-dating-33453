@@ -2,27 +2,26 @@ class LikesController < ApplicationController
   before_action :romance_params
   # binding.pry
   def create
-    #binding.pry
-      if Like.create(user_id: current_user.id, romance_id: params[:id])
-          respond_to do |format|
-            format.js
-          end
+    # binding.pry
+    if Like.create(user_id: current_user.id, romance_id: params[:id])
+      respond_to do |format|
+        format.js
+      end
     else
       redirect_back(fallback_location: root_path)
     end
-
   end
 
   def destroy
-    #binding.pry
-      if Like.find_by(user_id: current_user.id, romance_id: params[:id]).destroy
-          respond_to do |format|
-            format.js
-          end
-
-      else
-        redirect_back(fallback_location: root_path)
+    # binding.pry
+    if Like.find_by(user_id: current_user.id, romance_id: params[:id]).destroy
+      respond_to do |format|
+        format.js
       end
+
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private
@@ -30,7 +29,6 @@ class LikesController < ApplicationController
   def romance_params
     @romance = Romance.find(params[:id])
   end
-
 
   # def create
   #   @like = current_user.likes.create(romance_id: params[:romance_id])
@@ -43,16 +41,14 @@ class LikesController < ApplicationController
   #   redirect_back(fallback_location: root_path)
   # end
 
+  # sssssssssssssssssssssssssssssssss
 
-#sssssssssssssssssssssssssssssssss
+  # def create
+  #  Like.create(user_id: current_user.id, romance_id: params[:romance_id])
+  # @likes = Like.where(romance_id: params[:romance_id])
+  # @romances = Romance.all
 
-
-  #def create
-   #  Like.create(user_id: current_user.id, romance_id: params[:romance_id])
-    # @likes = Like.where(romance_id: params[:romance_id])
-    # @romances = Romance.all
-  
-  #end
+  # end
 
   # def destroy
   #   #binding.pry
@@ -61,5 +57,4 @@ class LikesController < ApplicationController
   #   @likes = Like.where(romance_id: params[:romance_id])
   #   @romances = Romance.all
   # end
-  
 end

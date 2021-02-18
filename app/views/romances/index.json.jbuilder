@@ -1,1 +1,1 @@
-json.array! @romances, partial: "romances/romance", as: :post
+json.array! @romances, partial: 'romances/romance', as: :post

@@ -1,1 +1,1 @@
-json.partial! "romances/romance", romance: @romance
+json.partial! 'romances/romance', romance: @romance

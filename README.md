@@ -124,9 +124,10 @@ Pass 2222<br>
 ### アソシエーション
 - belongs_to :user
 
-- has_one_attached :image
 - has_many         :comments
 - has_many         :likes
+
+※ 画像に関してはhas_one_attachedを使用している
 
 ## comments テーブル
 

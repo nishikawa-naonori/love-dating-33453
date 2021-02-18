@@ -20,7 +20,7 @@ end
 
   validates :title, presence: true
 
-  validates :info1, presence: true
+  validates :info1, length: { in: 4..300 }
 
 
 

@@ -28,7 +28,7 @@ Pass 2222<br>
 # 洗い出した要件
 
 これは<span style="color: red; ">赤文字</span>です
-
+<font color="Pink">テスト</font>
 
 <p>１・ユーザー管理機能</p><br>
 <p>２・記事一覧表示機能</p><br>

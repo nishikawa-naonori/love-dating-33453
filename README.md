@@ -94,14 +94,14 @@ Pass 2222<br>
 # データベース設計   
 
 ## users テーブル                              
-| Column             | Type   | Options      |
-| --------           | ------ | -----------  |
-| nickname           | string | null: false  |
-| email              | string | unique: true |
-| encrypted_password | string | null: false  |
-| seibetu_id         | string | null: false  |
-| age                | string | null: false  |
-| work               | string | null: false  |
+| Column             | Type    | Options      |
+| --------           | ------  | -----------  |
+| nickname           | string  | null: false  |
+| email              | string  | unique: true |
+| encrypted_password | string  | null: false  |
+| seibetu_id         | integer | null: false  |
+| work_id            | integer | null: false  |
+| age                | string  | null: false  |
 
 ### アソシエーション
 - belongs_to :seibetu
@@ -135,6 +135,7 @@ Pass 2222<br>
 | user       | references | null: false, foreign_key: true |
 | romance    | references | null: false, foreign_key: true |
 | text       | text       | null: false |
+| checked    | boolean    | null: false |
 
 ### アソシエーション
 

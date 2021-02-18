@@ -13,14 +13,20 @@ ID   admin<br>
 Pass 2222<br>
 
 # 利用方法
+ログインが家並み
 
 # 目指した課題解決
 
+# 洗い出した要件
+
+# 実装した機能についてのGIFと説明
 
 
+                    
 
-# データベース設計                       
+# 実装予定の機能
 
+# データベース設計   
 
 ## users テーブル                              
 | Column             | Type   | Options      |
@@ -84,6 +90,18 @@ Pass 2222<br>
 
 # ローカルでの動作方法
 
-git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述しましょう。この時、アプリケーション開発に使用した環境を併記することを忘れないでください（パッケージやRubyのバージョンなど）。
+rails バージョン 6.0.0
 
-https://github.com/nishikawa-naonori/love-dating-33453.git
+ruby  バージョン 2.6.5
+
+git cloneしてから、ローカルで動作をさせるまでに必要なコマンド
+
+git clone https://github.com/nishikawa-naonori/love-dating-33453.git
+
+bundle install
+
+rails db:create
+
+rails db:migrate
+
+rails s

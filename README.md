@@ -17,7 +17,7 @@ Pass 2222<br>
 # 目指した課題解決
 
 
-# ローカルでの動作方法
+
 
 # データベース設計                       
 
@@ -79,3 +79,11 @@ Pass 2222<br>
 ### アソシエーション
 - belongs_to :user
 - belongs_to :romance
+
+![ER image](ER.png)
+
+# ローカルでの動作方法
+
+git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述しましょう。この時、アプリケーション開発に使用した環境を併記することを忘れないでください（パッケージやRubyのバージョンなど）。
+
+https://github.com/nishikawa-naonori/love-dating-33453.git

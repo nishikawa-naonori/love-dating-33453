@@ -163,13 +163,21 @@ Pass 2222<br>
 
 # ローカルでの動作方法
 
-rails バージョン 6.0.0
+rails バージョン  6.0.0
 
-ruby  バージョン 2.6.5
+ruby  バージョン  2.6.5
+
+yarn  バージョン  1.22.10
+
+node  バージョン  v15.1.0
+
+mysql バージョン  5.6.51
 
 <h1>git cloneしてから、ローカルで動作をさせるまでに必要なコマンド</h1>
 
 git clone https://github.com/nishikawa-naonori/love-dating-33453.git
+
+cd love-dating-33453
 
 bundle install
 

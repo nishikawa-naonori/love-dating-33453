@@ -194,3 +194,7 @@ rails db:migrate
 http://localhost:3000
 
 rails s
+
+# Basic認証
+ID   admin<br>
+Pass 2222<br>

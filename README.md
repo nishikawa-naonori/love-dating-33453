@@ -159,7 +159,7 @@ Pass 2222<br>
 
 ## ER図
 
-![ER image](ERzu2.png)
+![ER image](ERzu_last.png)
 
 # ローカルでの動作方法
 

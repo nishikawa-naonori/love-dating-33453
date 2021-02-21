@@ -6,8 +6,18 @@
 <%= form_with model: [@romance, @comment], url: romance_comment_path, local: true do |f| %>
   
      <%= f.text_area :text, class:"items-text", id:"item-info",rows:"19" ,maxlength:"1000" %>
+
     <div class="sell-btn-contents">
-      <%= f.submit "編集完了" ,class:"sell-btn" %>
+     <%#= @romance.comment %> 
+       <% if current_user == @romance.user %> 
+        <% if current_user != @comment.user %> 
+           <%= f.submit "返信完了" ,class:"sell-btn" %>
+        <% end %>
+      <% end %>
+
+       <% if current_user == @comment.user %> 
+           <%= f.submit "編集完了" ,class:"sell-btn" %>
+        <% end %>
      <div>
   
   <% end %>

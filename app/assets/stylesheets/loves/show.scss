@@ -202,9 +202,12 @@
 }
 
 .comment{
-	margin: 0px 0px -29px 0px; /* 外側の余白 上下・左右 */
+  position: absolute;
+  bottom : 32px;
+  left: 17px;
+	margin: -10px 0px 0px 0px; /* 外側の余白 上下・左右 */
 	padding: 0px 0px 0px 0px; /* 内側の余白 上・右・下・左 */
-  width: 170px;
+  width: 156px;
 }
 
 .romance{

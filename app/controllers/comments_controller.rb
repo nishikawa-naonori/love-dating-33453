@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @romance = Romance.find(params[:romance_id])
     @comment = Comment.find(params[:id])
   end
 

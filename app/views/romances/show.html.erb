@@ -103,28 +103,41 @@
                   <div class="box1b">
                     <%= comment.text %> 
                   </div>
+                    <% if user_signed_in? %>  
+                        <div class="box1c">
+                              <% if current_user == comment.user %>  
+                                <%= link_to '編集', edit_romance_comment_path(@romance,comment), class:'box3c' %> 
+                              <% end %>
 
-                   <div class="box1c">
-                      <% if current_user == comment.user %>  
-                        <%= link_to '編集or削除', romance_comment_path(@romance,comment) %> 
-                      <% end %>
+                              <% if current_user == @romance.user %> 
+                                  <% if @romance.user != comment.user %>  
+                                    <%= link_to 'アドバイザーに返信', edit_romance_comment_path(@romance,comment), class:'box3c'  %>
+                                  <% end %>
+                                   <%= link_to '削除', romance_comment_path(comment.id), method: :delete , class:'box4c', data: { confirm: '本当に削除しますか？' } %>
+                              <% end %>
+
+                              <% if current_user != @romance.user %> 
+                                  <% if current_user == comment.user %>  
+                                    <%= link_to '削除', romance_comment_path(comment.id), method: :delete , class:'box4c', data: { confirm: '本当に削除しますか？' } %>
+                                  <% end %>
+                               <% end %>
+                          </div>
+                    <% end %>
 
                       <% if current_user == @romance.user %> 
-                        <%= link_to '削除する', romance_comment_path(@romance,comment) %>
-                      <% end %>
-                    </div>
-                          <%#  binding.pry %>
-
-                      <% if current_user == @romance.user %> 
-                        <div  class="comment" data-id=<%= comment.id %> data-check=<%= comment.checked %>>
-                          <div class="btn-gradient-3d">アドバイス読んだよ </div>
-                        </div>
-                      <% end %>
-
-                      <% if current_user != @romance.user %> 
-                        <% if comment.checked %> 
-                          <div  class="red1">投稿者：既読済み </div>
+                        <% if @romance.user != comment.user %>  
+                          <div  class="comment" data-id=<%= comment.id %> data-check=<%= comment.checked %>>
+                            <div class="btn-gradient-3d">アドバイス読んだよ </div>
+                          </div>
                         <% end %>
+                      <% end %>
+
+                      <% if current_user != @romance.user %>
+                          <% if current_user == comment.user %> 
+                            <% if comment.checked %> 
+                              <div  class="red1">投稿者：既読済み </div>
+                            <% end %>
+                          <% end %>
                       <% end %>
 
               </div>

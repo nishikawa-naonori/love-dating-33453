@@ -130,10 +130,40 @@
 
   .box1c {
 
-    margin: -75px 0px -50px 0px;
+    margin: -35px 0px -50px 0px;
     padding: 0px 0px 0px 0px;
-
+    position: relative;
   }
+
+
+  .box2c {
+
+    margin:  0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: 54px;
+    left: 0px;
+  }
+
+
+  .box3c {
+
+    margin:  0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: 23px;
+    left: 0px;
+  }
+
+  .box4c {
+
+    margin:  0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: 61px;
+    left: 0px;
+  }
+
 
 // コメントの送信ボタン---------------------------
 
@@ -153,6 +183,7 @@
 .comments {
   padding: 5px;
   margin-top: 5px;
+  position: relative;
 }
 
 .comments a {

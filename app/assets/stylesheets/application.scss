@@ -13,11 +13,12 @@
  *= require_tree .
  *= require_self
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
+
 .pagination {
   justify-content: center;
 }
 
  */
 //  @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";

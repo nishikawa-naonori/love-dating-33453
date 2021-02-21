@@ -123,9 +123,9 @@
                                <% end %>
                           </div>
                     <% end %>
-<%# binding.pry %>
+
                       <% if current_user == @romance.user %> 
-                        <% if current_user != comment.user %>  
+                        <% if @romance.user != comment.user %>  
                           <div  class="comment" data-id=<%= comment.id %> data-check=<%= comment.checked %>>
                             <div class="btn-gradient-3d">アドバイス読んだよ </div>
                           </div>

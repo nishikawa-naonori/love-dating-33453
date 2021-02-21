@@ -8,10 +8,6 @@
 # URL
 https://love-dating-33453.herokuapp.com/
 
-# サンプル用アカウント
-メールアドレス watar.wind.xyz1990@gmail.com<br>
-パスワード     111111a
-
 # Basic認証
 ID   admin<br>
 Pass 2222<br>

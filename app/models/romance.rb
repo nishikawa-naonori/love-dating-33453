@@ -15,7 +15,7 @@ class Romance < ApplicationRecord
 
   # validates :image, presence: true
 
-  validates :title, length: { in: 6..30 }
+  validates :title, length: { in: 5..30 }
 
-  validates :info1, length: { in: 10..1000 }
+  validates :info1, length: { in: 8..1000 }
 end

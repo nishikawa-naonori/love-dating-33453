@@ -91,7 +91,7 @@ Pass 2222<br>
 
 # 実装予定の機能
 
-コメント返信機能については今後実装予定
+新着コメント通知機能については今後実装予定
 
 # データベース設計   
 
@@ -157,7 +157,7 @@ Pass 2222<br>
 
 ## 画面遷移図
 
-![ER image](ER4.png)
+![ER image](ER5.png)
 
 ## ER図
 
@@ -194,3 +194,13 @@ rails s
 # Basic認証
 ID   admin<br>
 Pass 2222<br>
+
+# テストコマンド
+
+## ユーザー新規登録の単体テストコマンド
+
+bundle exec rspec spec/models/user_spec.rb
+
+## ユーザー新規登録の結合テストコマンド
+
+bundle exec rspec spec/system/users_spec.rb

@@ -199,8 +199,12 @@ Pass 2222<br>
 
 ## ユーザー新規登録の単体テストコマンド
 
+```ruby
 bundle exec rspec spec/models/user_spec.rb
+```
 
 ## ユーザー新規登録の結合テストコマンド
 
+```ruby
 bundle exec rspec spec/system/users_spec.rb
+```

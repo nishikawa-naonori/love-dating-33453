@@ -37,10 +37,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    Comment.find(params[:id]).destroy
-    #@comment.destroy
-    render 'romances/show'
-    #redirect_to "/romances/#{romance.id}"
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    # render :show
+    redirect_to "/romances/#{@comment.romance.id}"
   end
 
   private

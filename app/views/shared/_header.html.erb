@@ -9,7 +9,7 @@
   <div class='search-bar-contents'>
     <%= link_to image_tag("名称未設定2.png", class:"furima-icon"), "/" %>
      <%= form_with(url: search_romances_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "キーワードを検索してね", class: "input-box", required: true %>
+      <%= form.text_field :keyword, placeholder: "キーワードを検索してね！", class: "input-box", required: true %>
            <%# <div class="register-btn">  %>
                   <%= form.submit "検索", class: "a112-btn" %>
             <%# </div> %>

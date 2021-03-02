@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'users/index'
+  get 'users/show'
   devise_for :users
-  resources :users, only: [:show]
   root to: 'romances#index'
   resources :romances do
     
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
   get 'users', to: 'users#check'
 
 
-  
+  resources :users, only: :show
 end
 
 

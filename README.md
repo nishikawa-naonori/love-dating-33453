@@ -8,10 +8,6 @@
 # URL
 https://love-dating-33453.herokuapp.com/
 
-# Basic認証
-ID   admin<br>
-Pass 2222<br>
-
 # 利用方法
 老若男女とわず、恋愛で困っている人が悩みを投稿し、閲覧者がアドバイスを送信する。<br>
 必要であれば、投稿者がアドバイザーにコメントもできる<br>
@@ -190,10 +186,6 @@ rails db:migrate
 http://localhost:3000
 
 rails s
-
-# Basic認証
-ID   admin<br>
-Pass 2222<br>
 
 # テストコマンド
 

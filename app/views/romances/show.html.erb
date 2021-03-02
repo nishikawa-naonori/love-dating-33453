@@ -113,12 +113,12 @@
                                   <% if @romance.user != comment.user %>  
                                     <%= link_to 'アドバイザーに返信', edit_romance_comment_path(@romance,comment), class:'box3c'  %>
                                   <% end %>
-                                   <%= link_to '削除', romance_comment_path(comment.id), method: :delete , class:'box4c', data: { confirm: '本当に削除しますか？' } %>
+                                   <%= link_to '削除', romance_comment_path(@romance,comment.id), method: :delete , class:'box4c', data: { confirm: '本当に削除しますか？' } %>
                               <% end %>
 
                               <% if current_user != @romance.user %> 
                                   <% if current_user == comment.user %>  
-                                    <%= link_to '削除', romance_comment_path(comment.id), method: :delete , class:'box4c', data: { confirm: '本当に削除しますか？' } %>
+                                    <%= link_to '削除', romance_comment_path(@romance,comment.id), method: :delete , class:'box4c', data: { confirm: '本当に削除しますか？' } %>
                                   <% end %>
                                <% end %>
                           </div>

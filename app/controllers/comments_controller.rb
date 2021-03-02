@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-
+    #binding.pry
     if @comment.update(comment_params_update)
       redirect_to "/romances/#{@comment.romance.id}"
     else
@@ -38,6 +38,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    #binding.pry
     @comment.destroy
     # render :show
     redirect_to "/romances/#{@comment.romance.id}"

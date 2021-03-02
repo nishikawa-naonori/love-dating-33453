@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get 'checked'
     end
     
-    resources :comments 
+    resources :comments, only: [:create, :edit, :update] 
 
 
 
@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   get 'users', to: 'users#check'
 
-
+  resources :comments, only: [:destroy] 
   
 end
 

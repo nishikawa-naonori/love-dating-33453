@@ -39,6 +39,7 @@ class RomancesController < ApplicationController
   end
 
   def destroy
+    #binding.pry
     @romance.destroy
 
     respond_to do |format|
